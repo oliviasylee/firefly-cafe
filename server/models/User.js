@@ -1,8 +1,20 @@
 const { Schema, model } = require('mongoose');
-// const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt');
+const Order = require('./Order')
+
 
 const userSchema = new Schema(
   {
+    firstName: {
+      type: String,
+      required: true,
+      trim: true
+    },
+    lastName: {
+      type: String,
+      required: true,
+      trim: true
+    },
     username: {
       type: String,
       required: true,
@@ -19,13 +31,14 @@ const userSchema = new Schema(
       required: true,
       minlength: 6,
     },
+    orders: [Order.schema]
   },
 );
 
 userSchema.pre("save", async function (next) {
   if (this.isNew || this.isModified("password")) {
     const saltRounds = 10;
-    this.password = await bcypt.has(this.password, saltRounds)
+    this.password = await bcypt.hash(this.password, saltRounds)
   }
 
   next();
