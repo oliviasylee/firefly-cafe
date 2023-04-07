@@ -6,24 +6,29 @@ const productSchema = new Schema(
             type: String,
             required: true,
         },
-        category: {
-            type: String,
+        price: {
+            type: Number,
             required: true,
+            min: 0.99
         },
-        cost: {
+        image: {
             type: String,
-            required: true,
         },
         description: {
             type: String,
+        },
+        quantity: {
+            type: Number,
+            min: 0,
+            default: 0
+        },
+        category: {
+            type: Schema.Types.ObjectId,
+            ref: 'Category',
             required: true,
         },
-        image: {
-            type:String,
-            required: true,
-        }
     });
 
     const Product = model('Product', productSchema);
-    
+
     module.exports = Product;
