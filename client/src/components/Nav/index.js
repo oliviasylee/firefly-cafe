@@ -1,39 +1,54 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
+import { NavLink } from 'react-router-dom';
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+import logo from '../../images/logo.png'
 
 function Nav() {
   return (
     <Grid container>
-      <div className='container'>
+      <Grid item xs={6}>
+        <NavLink
+          exact to='/'>
+        <img src={logo} className='logo' alt='logo' />
+        </NavLink>
+      </Grid>
+
+      <Grid item xs={6} style={{ height: '100%' }}>
         <ul className='nav'>
-          <li className='nav-item'>
-            <NavLink to='/shop' activeClassName='nav-link active' className='nav-link'>
+          <li>
+            <NavLink to='/shop' className='nav-link' activeClassName='active'>
               Shop
             </NavLink>
           </li>
-          <li className='nav-item'>
-            <NavLink to='/learn' activeClassName='nav-link active' className='nav-link'>
+          <li>
+            <NavLink to='/learn' className='nav-link' activeClassName='active'>
               Learn
             </NavLink>
           </li>
-          <li className='nav-item'>
-            <NavLink to='/menu' activeClassName='nav-link active' className='nav-link'>
+          <li>
+            <NavLink to='/menu' className='nav-link' activeClassName='active'>
               Menu
             </NavLink>
           </li>
-          <li className='nav-item'>
-            <NavLink to='/login' activeClassName='nav-link active' className='nav-link'>
+          <li>
+            <NavLink to='/login' className='nav-link' activeClassName='active'>
               Login
             </NavLink>
           </li>
-          <li className='nav-item'>
-            <NavLink to='/signup' activeClassName='nav-link active' className='nav-link'>
+          <li>
+            <NavLink to='/signup' className='nav-link' activeClassName='active'>
               Sign up
             </NavLink>
           </li>
+          
+          <li>
+            <NavLink to='/cart' className='nav-link' activeClassName='active'>
+              <ShoppingBagIcon fontSize='medium' style={{ color: 'black' }} />
+            </NavLink>
+          </li>
         </ul>
-      </div>
+      </Grid>
     </Grid>
   );
 }

@@ -1,3 +1,9 @@
+:root {
+  --background: #f9f6efff;
+  --lightgrey: #f3f3f3ff ;
+  --footer: #333333;
+}
+
 * {
   font-family: 'Economica', sans-serif;
   font-family: 'Nunito Sans', sans-serif;
@@ -10,8 +16,89 @@ html {
 }
 
 body {
-  margin-top: 20px;
+  margin-top: 45px;
   height: 100%;
   width: 100%;
   background-color: var(--background);
+  background-image: url('./images/main.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-attachment: fixed; */
+}
+
+.app-content {
+  min-height: calc(150vh - 40px - 16px - 3px - 16px - 500px);
+}
+
+/* Nav */
+.logo {
+  width: 9%;
+  margin-top: -20px;
+}
+
+ul.nav {
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.nav li {
+  margin-left: 1.5rem;
+}
+
+.nav {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav li {
+  margin-right: 15px;
+}
+
+.nav li:last-child {
+  margin-right: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--footer);
+  transition: transform 0.3s;
+}
+
+.nav-link.active {
+  font-weight: bolder;
+}
+
+.nav li:hover {
+  transform: scale(1.1);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  color: var(--background);
+  font-size: 17px;
+  padding: 26px 34px
+}
+
+.footer-container {
+  background-color: var(--footer);
+  width: 100%;
+}
+
+.socialIcons {
+  list-style-type: none;
+  display: inline-flex;
+  justify-content: center;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.socialIcons li {
+  margin: 0 0.7rem;
 }
