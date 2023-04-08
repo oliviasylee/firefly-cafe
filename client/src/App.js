@@ -1,15 +1,21 @@
 import React from 'react';
-import Header from './components/Header/index'
+import { BrowserRouter } from 'react-router-dom';
 import Nav from './components/Nav/index';
-import Footer from './components/Footer/index'
+// import Footer from './components/Footer/index'
 import Container from '@mui/material/Container';
 import './App.css';
 
-export default function App() {
+function App() {
   return (
-    <Container maxWidth='xl'>
+    <BrowserRouter>
+    <div className="app-wrapper" style={{ borderBottom: '2px solid #000', marginTop: '40px', padding: '16px'  }}>
+      <Container maxWidth='lg'>
         <Nav />
-        <Footer />
-    </Container>
+      </Container>
+    </div>
+    </BrowserRouter>
   );
 }
+
+
+export default App;
