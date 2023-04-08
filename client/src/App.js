@@ -1,6 +1,7 @@
 import React from 'react';
-import Nav from './components/Nav/index.js';
-// import Footer from './components/Footer/index.js';
+import Header from './components/Header/index'
+import Nav from './components/Nav/index';
+import Footer from './components/Footer/index'
 import Container from '@mui/material/Container';
 import './App.css';
 
