@@ -4,6 +4,7 @@ import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
 
+
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
@@ -46,8 +47,11 @@ const styles = {
   },
 };
 
-function Signup() {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+function Signup(props) {
+  const [formState, setFormState] = useState({ 
+    username: '',
+    email: '',
+    password: '' });
   const [addUser] = useMutation(ADD_USER);
   const [showAlert, setShowAlert] = useState(false);
 
@@ -56,10 +60,11 @@ function Signup() {
     try {
       const mutationResponse = await addUser({
         variables: {
-          email: formState.email,
-          password: formState.password,
           firstName: formState.firstName,
           lastName: formState.lastName,
+          username: formState.username,
+          email: formState.email,
+          password: formState.password,
         },
       });
       const token = mutationResponse.data.addUser.token;
@@ -127,6 +132,18 @@ function Signup() {
         onChange={handleChange}
         name='lastName'
         value={formState.lastName}
+      />
+      <TextField
+        label='Username'
+        type='username'
+        variant='filled'
+        margin='normal'
+        style={styles.input}
+        required
+        fullWidth
+        name='username'
+        onChange={handleChange}
+        value={formState.username}
       />
       <TextField
         label='Email'
