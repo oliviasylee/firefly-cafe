@@ -1,23 +1,34 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Routes } from 'react-router-dom';
 import Nav from './components/Nav/index';
 import Footer from './components/Footer/index';
 import Container from '@mui/material/Container';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
 import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className='app-wrapper' style={{ borderBottom: '3px solid #000', marginTop: '40px', padding: '16px' }}>
+    <Router>
+      <div className='app-wrapper' style={{ position: 'relative' }}>
+        <div style={{ borderBottom: '3px solid #000', position: 'absolute', top: '50px', left: 0, right: 0 }} />
         <Container maxWidth='lg'>
           <Nav />
+          <Routes>
+            {/* <Route exact path='/shop' component={Shop} />
+            <Route exact path='/learn' component={Learn} />
+            <Route exact path='/menu' component={Menu} />*/}
+            <Route exact path='/login' element={<Login />} />
+            <Route exact path='/signup' element={<Signup />} />
+            {/* <Route exact path='/cart' element={<Cart />} /> */}
+          </Routes>
         </Container>
       </div>
       <div className='app-content'>
         {/* home */}
       </div>
       <Footer />
-    </BrowserRouter>
+    </Router>
   );
 }
 
