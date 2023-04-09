@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
-// import { validateEmail } from '../utils/helpers';
+import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+import Auth from '../utils/auth';
+import { ADD_USER } from '../utils/mutations';
+
 import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
+import FormControl from '@mui/material/FormControl'; 
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
 const styles = {
   container: {
@@ -40,40 +46,113 @@ const styles = {
   },
 };
 
-function Signup(){
+function Signup() {
+  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [addUser] = useMutation(ADD_USER);
+  const [showAlert, setShowAlert] = useState(false);
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const mutationResponse = await addUser({
+        variables: {
+          email: formState.email,
+          password: formState.password,
+          firstName: formState.firstName,
+          lastName: formState.lastName,
+        },
+      });
+      const token = mutationResponse.data.addUser.token;
+      Auth.login(token);
+    } catch (err) {
+      console.error(err);
+      setShowAlert(true);
+    }
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
   return (
     <Grid container style={styles.container}>
       <Grid item xs={12} style={styles.title}>
-      <h2 style={styles.singupTitle}>Create Account</h2>
-      <p style={{ textAlign: 'center' }}>Already have an account? <a href='/login' style={{ textDecoration: 'none' }}>Login here.</a></p>
+        <h2 style={styles.singupTitle}>Create Account</h2>
+        <p style={{ textAlign: 'center' }}>
+          Already have an account?{' '}
+          <Link Link to='/login' style={{ textDecoration: 'none' }}>
+            Login here
+          </Link>
+        </p>
 
-        <TextField
-        label='Username'
+    <FormControl component='form' onSubmit={handleFormSubmit}>
+      <Snackbar
+        open={showAlert}
+        autoHideDuration={6000}
+        onClose={() => setShowAlert(false)}
+        sx={{ backgroundColor: 'red' }}
+      >
+        <Alert
+          onClose={() => setShowAlert(false)}
+          severity='error'
+        >
+          Something went wrong with your signup!
+        </Alert>
+      </Snackbar>
+
+      <TextField
+        label='First Name'
         type='text'
         variant='filled'
         margin='normal'
         style={styles.input}
         required
         fullWidth
+        name='firstName'
+        onChange={handleChange}
+        value={formState.firstName}
       />
-        <TextField
-          label='Email'
-          type='email'
-          variant='filled'
-          margin='normal'
-          style={styles.input}
-          required
-          fullWidth
+      <TextField
+        label='Last Name'
+        type='text'
+        variant='filled'
+        margin='normal'
+        style={styles.input}
+        required
+        fullWidth
+        onChange={handleChange}
+        name='lastName'
+        value={formState.lastName}
+      />
+      <TextField
+        label='Email'
+        type='email'
+        variant='filled'
+        margin='normal'
+        style={styles.input}
+        required
+        fullWidth
+        onChange={handleChange}
+        name='email'
+        value={formState.email}
+      />
+      <TextField
+        label='Password'
+        type='password'
+        variant='filled'
+        margin='normal'
+        style={styles.input}
+        required
+        fullWidth
+        name='password'
+        onChange={handleChange}
+        value={formState.password || ''}
         />
-        <TextField
-          label='Password'
-          type='password'
-          variant='filled'
-          margin='normal'
-          style={styles.input}
-          required
-          fullWidth
-        />
+      <Grid container justifyContent='center'>
         <Button
           className='button'
           type='submit'
@@ -81,11 +160,14 @@ function Signup(){
           color='primary'
           sx={styles.button}
           endIcon={<SendIcon />}
-          fullWidth>
+          fullWidth
+        >
           Register
-         </Button>
+        </Button>
       </Grid>
-    </Grid>
+    </FormControl>
+  </Grid>
+</Grid>
   );
 }
 

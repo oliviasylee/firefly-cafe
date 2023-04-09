@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-// import { validateEmail } from '../utils/helpers';
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
+
 import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
+// import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
+import FormControl from '@mui/material/FormControl'; 
 
 const styles = {
   container: {
@@ -40,19 +44,47 @@ const styles = {
   },
 };
 
-function Login(){
+function Login() {
+  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [loginUser, { error }] = useMutation(LOGIN_USER);
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const mutationResponse = await loginUser({
+        variables: { 
+          email: formState.email, 
+          password: formState.password },
+      });
+      const token = mutationResponse.data.login.token;
+      Auth.login(token);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
   return (
     <Grid container style={styles.container}>
       <Grid item xs={12} style={styles.title}>
       <h2 style={styles.singupTitle}>Sign In</h2>
       <p style={{ textAlign: 'center' }}>Don't have an account? <a href='/signup' style={{ textDecoration: 'none' }}>Create one now</a></p>
 
+      <FormControl component='form' onSubmit={handleFormSubmit}>
         <TextField
         label='Username'
         type='text'
         variant='filled'
         margin='normal'
         style={styles.input}
+        onChange={handleChange}
         required
         fullWidth
       />
@@ -62,19 +94,28 @@ function Login(){
           variant='filled'
           margin='normal'
           style={styles.input}
+          onChange={handleChange}
           required
           fullWidth
         />
-        <Button
-          className='button'
-          type='submit'
-          variant='contained'
-          color='primary'
-          sx={styles.button}
-          endIcon={<SendIcon />}
-          fullWidth>
-          Login
-         </Button>
+        {error ? (
+          <div>
+            <p className="error-text">The provided credentials are incorrect</p>
+          </div>
+        ) : null}
+        <Grid container justifyContent='center'>
+          <Button
+            className='button'
+            type='submit'
+            variant='contained'
+            color='primary'
+            sx={styles.button}
+            endIcon={<SendIcon />}
+            fullWidth>
+            Login
+          </Button>
+        </Grid>
+        </FormControl>
       </Grid>
     </Grid>
   );
