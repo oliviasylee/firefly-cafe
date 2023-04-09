@@ -33,8 +33,9 @@ body {
 
 /* Nav */
 .logo {
-  width: 9%;
-  margin-top: -20px;
+  max-width: 50%;
+  height: auto;
+  margin-top: -30px;
 }
 
 ul.nav {
@@ -80,6 +81,7 @@ ul.nav li {
 
 /* Footer */
 .footer {
+  /* margin-top: 70px; */
   text-align: center;
   color: var(--background);
   font-size: 17px;

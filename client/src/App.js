@@ -40,8 +40,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className='app-wrapper' style={{ position: 'relative' }}>
-          <div style={{ borderBottom: '3px solid #000', position: 'absolute', top: '50px', left: 0, right: 0 }} />
-          <Container maxWidth='lg'>
+          <Container maxWidth='xl'>
             <Nav />
             <Routes>
               {/* <Route exact path='/shop' component={Shop} />
