@@ -8,8 +8,7 @@ function Nav() {
   return (
     <Grid container>
       <Grid item xs={6}>
-        <NavLink
-          exact to='/'>
+        <NavLink to='/'>
         <img src={logo} className='logo' alt='logo' />
         </NavLink>
       </Grid>
@@ -17,33 +16,35 @@ function Nav() {
       <Grid item xs={6} style={{ height: '100%' }}>
         <ul className='nav'>
           <li>
-            <NavLink to='/shop' className='nav-link' activeClassName='active'>
+            <NavLink 
+              to='/shop' 
+              className='nav-link' >
               Shop
             </NavLink>
           </li>
           <li>
-            <NavLink to='/learn' className='nav-link' activeClassName='active'>
+            <NavLink to='/learn' className='nav-link' >
               Learn
             </NavLink>
           </li>
           <li>
-            <NavLink to='/menu' className='nav-link' activeClassName='active'>
+            <NavLink to='/menu' className='nav-link' >
               Menu
             </NavLink>
           </li>
           <li>
-            <NavLink to='/login' className='nav-link' activeClassName='active'>
+            <NavLink to='/login' className='nav-link' >
               Login
             </NavLink>
           </li>
           <li>
-            <NavLink to='/signup' className='nav-link' activeClassName='active'>
+            <NavLink to='/signup' className='nav-link' >
               Sign up
             </NavLink>
           </li>
           
           <li>
-            <NavLink to='/cart' className='nav-link' activeClassName='active'>
+            <NavLink to='/cart' className='nav-link' >
               <ShoppingBagIcon fontSize='medium' style={{ color: 'black' }} />
             </NavLink>
           </li>
