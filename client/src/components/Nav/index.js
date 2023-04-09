@@ -36,7 +36,7 @@ function Nav() {
               </NavLink>
             </li>
             <li>
-              <NavLink to='/' onClick={(event) => Auth.logout} className='nav-link' >
+              <NavLink to='/' onClick={(event) => Auth.logout()} className='nav-link' >
                 Logout
               </NavLink>
             </li>
