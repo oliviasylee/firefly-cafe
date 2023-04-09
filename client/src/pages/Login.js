@@ -44,16 +44,16 @@ const styles = {
   },
 };
 
-function Login() {
-  const [formState, setFormState] = useState({ email: '', password: '' });
-  const [loginUser, { error }] = useMutation(LOGIN_USER);
+function Login(props) {
+  const [formState, setFormState] = useState({ username: '', password: '' });
+  const [login, { error }] = useMutation(LOGIN_USER);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
-      const mutationResponse = await loginUser({
+      const mutationResponse = await login({
         variables: { 
-          email: formState.email, 
+          username: formState.username, 
           password: formState.password },
       });
       const token = mutationResponse.data.login.token;
@@ -79,8 +79,9 @@ function Login() {
 
       <FormControl component='form' onSubmit={handleFormSubmit}>
         <TextField
-        label='Username'
-        type='text'
+        name='username'
+        label='username'
+        type='username'
         variant='filled'
         margin='normal'
         style={styles.input}
@@ -89,7 +90,8 @@ function Login() {
         fullWidth
       />
         <TextField
-          label='Password'
+          name='password'
+          label='password'
           type='password'
           variant='filled'
           margin='normal'
