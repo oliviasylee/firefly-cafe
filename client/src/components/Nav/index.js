@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Auth from '../../utils/auth';
 import { NavLink } from 'react-router-dom';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
@@ -6,6 +6,12 @@ import logo from '../../images/logo.png';
 import { Grid } from '@mui/material';
 
 function Nav() {
+  const [scroll, setScroll] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setScroll(window.scrollY > 50);
+    });
+  }, []);
   return (
     <Grid container style={{ borderBottom: '1px solid #000', paddingBottom: '10px' }}>
       <Grid item xs={6}>
@@ -14,7 +20,7 @@ function Nav() {
         </NavLink>
       </Grid> 
       <Grid item xs={6}>
-        <ul className='nav' style={{ height: '100%' }}>
+        <ul className={scroll ? 'nav bubble bub' : 'nav'}>
           <li>
             <NavLink to='/shop' className='nav-link'>
               Shop

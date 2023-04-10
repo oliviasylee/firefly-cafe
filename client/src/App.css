@@ -53,8 +53,25 @@ ul.nav li {
 .nav {
   list-style-type: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  position: fixed;
+  top: 0;
+  right: 1.5rem;
+  gap: 1rem;
+  height: 15%;
+}
+.bubble {
+    box-shadow: 0 5px 10px 0 rgba(138, 155, 165, 0.15);
+    padding: 10px 0;
+    -webkit-transition : all 0.3s ease-out;
+    transition : all 0.3s ease-out;
+}
+.bub {
+  height: 12%;
+  width: 35% fit-content;
+	-webkit-transition : all 0.3s ease-out;
+	transition : all 0.3s ease-out;
 }
 
 .nav li {
