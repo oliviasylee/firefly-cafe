@@ -7,6 +7,8 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import { StoreProvider } from './utils/GlobalState';
+
 
 import Nav from './components/Nav/index';
 import Footer from './components/Footer/index';
@@ -41,6 +43,8 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className='app-wrapper' style={{ position: 'relative' }}>
+        <StoreProvider>
+
           <Container maxWidth='xl'>
             <Nav />
             <Routes>
@@ -52,6 +56,7 @@ function App() {
               {/* <Route exact path='/cart' element={<Cart />} /> */}
             </Routes>
           </Container>
+        </StoreProvider>
         </div>
         <div className='app-content'>
           {/* home */}
