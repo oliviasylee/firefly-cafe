@@ -11,7 +11,6 @@ import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 
-
 function ProductList() {
   const [state, dispatch] = useStoreContext();
 
@@ -48,7 +47,6 @@ function ProductList() {
     );
   }
 
-
   return (
     <Container maxWidth='lg'>
       <Grid container spacing={2}>
@@ -65,7 +63,7 @@ function ProductList() {
             </Grid>
           ))
         ) : (
-          <Typography variant="h6">No products found</Typography>
+          <Typography variant='h6'>No products found</Typography>
         )}
       </Grid>
     </Container>

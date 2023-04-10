@@ -75,8 +75,8 @@ function Login(props) {
   return (
     <Grid container style={styles.container}>
       <Grid item xs={12} style={styles.title}>
-      <h2 style={styles.singupTitle}>Sign In</h2>
-      <p style={{ textAlign: 'center' }}>Don't have an account? <a href='/signup' style={{ textDecoration: 'none' }}>Create one now</a></p>
+        <h2 style={styles.singupTitle}>Sign In</h2>
+        <p style={{ textAlign: 'center' }}>Don't have an account? <a href='/signup' style={{ textDecoration: 'none' }}>Create one now</a></p>
 
       <FormControl component='form' onSubmit={handleFormSubmit}>
         <TextField
