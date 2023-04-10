@@ -12,6 +12,7 @@ import Nav from './components/Nav/index';
 import Footer from './components/Footer/index';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import Shop from './pages/Shop';
 
 import Container from '@mui/material/Container';
 import './App.css';
@@ -43,8 +44,8 @@ function App() {
           <Container maxWidth='xl'>
             <Nav />
             <Routes>
-              {/* <Route exact path='/shop' component={Shop} />
-              <Route exact path='/learn' component={Learn} />
+              <Route exact path='/shop' element={<Shop />} />
+              {/*<Route exact path='/learn' component={Learn} />
               <Route exact path='/menu' component={Menu} />*/}
               <Route exact path='/login' element={<Login />} />
               <Route exact path='/signup' element={<Signup />} />

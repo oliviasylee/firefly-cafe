@@ -4,14 +4,15 @@ import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
 
-
-import Grid from '@mui/material/Grid';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
+import {
+  Grid,
+  TextField,
+  Button,
+  FormControl,
+  Snackbar,
+  Alert,
+  } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
-import FormControl from '@mui/material/FormControl'; 
-import Snackbar from '@mui/material/Snackbar';
-import Alert from '@mui/material/Alert';
 
 const styles = {
   container: {
@@ -89,7 +90,7 @@ function Signup(props) {
         <h2 style={styles.singupTitle}>Create Account</h2>
         <p style={{ textAlign: 'center' }}>
           Already have an account?{' '}
-          <Link Link to='/login' style={{ textDecoration: 'none' }}>
+          <Link to='/login' style={{ textDecoration: 'none' }}>
             Login here
           </Link>
         </p>
