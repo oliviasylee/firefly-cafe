@@ -45,9 +45,11 @@ function CategoryMenu() {
   const handleClick = (id) => {
     dispatch({
       type: UPDATE_CURRENT_CATEGORY,
-      currentCategory: id,
+      currentCategory: id === 'all' ? '' : id,
     });
-  };
+  };  
+
+  const categoriesWithAll = [{ _id: 'all', name: 'All' }, ...categories];
 
   return (
     <Container maxWidth='lg'>
@@ -57,7 +59,7 @@ function CategoryMenu() {
           {loading ? (
             <div>Loading...</div>
           ) : (
-            categories.map((item) => (
+            categoriesWithAll.map((item) => (
               <Button
                 key={item._id}
                 variant='outlined'
@@ -75,7 +77,6 @@ function CategoryMenu() {
       </Grid>
     </Container>
   );
-  
 }
 
 export default CategoryMenu;
