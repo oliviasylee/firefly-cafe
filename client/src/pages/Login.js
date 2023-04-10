@@ -3,12 +3,13 @@ import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
-import Grid from '@mui/material/Grid';
-// import Link from '@mui/material/Link';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
+import { 
+  Grid, 
+  TextField, 
+  Button, 
+  FormControl 
+  } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
-import FormControl from '@mui/material/FormControl'; 
 
 const styles = {
   container: {
