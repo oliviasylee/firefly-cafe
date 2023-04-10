@@ -22,6 +22,11 @@ function Nav() {
       <Grid item xs={6}>
         <ul className={scroll ? 'nav bubble bub' : 'nav'}>
           <li>
+            <NavLink to='/'>
+            <img src={logo} className={scroll ? "scroll-logo" : "hidden"} alt='logo' />
+            </NavLink>
+          </li>
+          <li>
             <NavLink to='/shop' className='nav-link'>
               Shop
             </NavLink>
