@@ -9,11 +9,13 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { StoreProvider } from './utils/GlobalState';
 
-
 import Nav from './components/Nav/index';
 import Footer from './components/Footer/index';
+// import Cart from './components/Cart/index';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+// import Detail from './pages/Detail';
+
 import Shop from './pages/Shop';
 
 import Container from '@mui/material/Container';
@@ -48,7 +50,10 @@ function App() {
           <Container maxWidth='xl'>
             <Nav />
             <Routes>
+              {/* <Route exact path='/' element={<Home />} /> */}
               <Route exact path='/shop' element={<Shop />} />
+              {/* <Route exact path='/products/:id' component={<Detail />} 
+              /> */}
               {/*<Route exact path='/learn' component={Learn} />
               <Route exact path='/menu' component={Menu} />*/}
               <Route exact path='/login' element={<Login />} />

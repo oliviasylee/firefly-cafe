@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import { useStoreContext } from "../../utils/GlobalState";
-import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
-import { pluralize } from "../../utils/helpers"
-import { idbPromise } from "../../utils/helpers";
+import { Link } from 'react-router-dom';
+import { useStoreContext } from '../../utils/GlobalState';
+import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
+import { pluralize, idbPromise } from '../../utils/helpers'
 import { 
   Grid,
   Container,
@@ -40,7 +39,7 @@ function ProductItem(item) {
                 ...itemInCart,
                 purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
             });
-    }else {
+    } else {
         dispatch({
           type: ADD_TO_CART,
           product: { ...item, purchaseQuantity: 1 }
@@ -62,7 +61,7 @@ function ProductItem(item) {
                     <CardContent>
                         <Link
                         to={`/products/${_id}`}
-                        gutterBottom variant='h5'
+                        // gutterBottom variant='h5'
                         component='div'
                         >
                                 Title: {name}
@@ -75,8 +74,8 @@ function ProductItem(item) {
                         </Typography>
                         <CardActions>
                             <Button
-                             size='small'
-                             onClick={addToCart}  
+                            size='small'
+                            onClick={addToCart}  
                             >Add to cart
                             </Button>
                         </CardActions>
