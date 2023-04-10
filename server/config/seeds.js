@@ -2,39 +2,29 @@ const db = require('./connection');
 const { User, Product, Category } = require('../models');
 
 db.once('open', async () => {
-  await Category.deleteMany();
+    await Category.deleteMany();
 
-  const categories = await Category.insertMany([
-    { name: 'Coffee Bean' },
-    { name: 'Food' },
-  ]);
+    const categories = await Category.insertMany([
+        { name: 'Food' },
+        { name: 'Coffee' },
+        { name: 'GiftCards' },
+        { name: 'GiftShop'}
+      ]);
+    console.log('categories seeded');
 
-  console.log('categories seeded');
+    await Product.deleteMany();
 
-  await Product.deleteMany();
-
-  const products = await Product.insertMany([
-    {
-      name: 'Tin of Cookies',
-      description:
-        'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
-      image: 'cookie-tin.jpg',
-      category: categories[0]._id,
-      price: 2.99,
-      quantity: 500
-    },
-    {
-      name: 'Canned Coffee',
-      description:
-        'Praesent sed lacinia mauris. Nulla congue nibh magna, at feugiat nunc scelerisque quis. Donec iaculis rutrum vulputate. Suspendisse lectus sem, vulputate ac lectus sed, placerat consequat dui.',
-      image: 'canned-coffee.jpg',
-      category: categories[0]._id,
-      price: 1.99,
-      quantity: 10
-    }
-  ]);
-
-  console.log('products seeded');
-
-  process.exit();
-});
+    const products = await Product.insertMany([
+        {
+            name: 'Sandwich',
+            price: 4.99,
+            image: '',
+            description: 'Classic Sandwhich',
+            quantity: 30,
+            category: categories[0]._id
+        }
+    ])
+    console.log('products seeded');
+    
+    process.exit();
+})  
