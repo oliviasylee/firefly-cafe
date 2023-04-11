@@ -40,7 +40,7 @@ db.once('open', async () => {
             category: categories[2]._id
         },
         {
-            name: 'FLYING PENGUIN HAT IN BLACK',
+            name: 'Flying Penguin Hat',
             price: 34.99,
             image: '',
             description: 'HAT',

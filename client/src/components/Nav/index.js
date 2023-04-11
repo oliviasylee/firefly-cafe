@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Auth from '../../utils/auth';
 import { NavLink } from 'react-router-dom';
 // import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
-import logo from '../../images/logo.png';
+import logo from '../../assets/logo.png';
 import { Grid } from '@mui/material';
 
 function Nav() {
