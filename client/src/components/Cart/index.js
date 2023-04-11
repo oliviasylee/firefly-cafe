@@ -67,25 +67,22 @@ const Cart = () => {
 
   if (!state.cartOpen) {
     return (
-      <Box className="cart-closed">
-        <IconButton onClick={toggleCart} aria-label="open cart">
-        <ShoppingBagIcon
-                fontSize='medium'
-                style={{ color: 'black' }}
-              />
+      <Box className='cart-closed'>
+        <IconButton onClick={toggleCart} aria-label='open cart'>
+          <ShoppingCartIcon />
         </IconButton>
       </Box>
     );
   }
 
   return (
-    <Box className="cart">
+    <Box className='cart'>
       <Box>
-        <IconButton className="close" onClick={toggleCart} aria-label="close cart">
+        <IconButton className='close' onClick={toggleCart} aria-label='close cart'>
           <CloseIcon />
         </IconButton>
       </Box>
-      <Typography variant="h4">Shopping Cart</Typography>
+      <Typography variant='h4'>Shopping Cart</Typography>
       {state.cart.length ? (
         <div>
           <List>
@@ -96,11 +93,11 @@ const Cart = () => {
             ))}
           </List>
           <Divider />
-          <Box className="flex-row space-between">
-            <Typography variant="h6">Total: ${calculateTotal()}</Typography>
+          <Box className='flex-row space-between'>
+            <Typography variant='h6'>Total: ${calculateTotal()}</Typography>
 
             {Auth.loggedIn() ? (
-              <Button onClick={submitCheckout} variant="contained" color="primary">
+              <Button onClick={submitCheckout} variant='contained' color='primary'>
                 Checkout
               </Button>
             ) : (
@@ -109,8 +106,8 @@ const Cart = () => {
           </Box>
         </div>
       ) : (
-        <Typography variant="h5">
-          <span role="img" aria-label="shocked">
+        <Typography variant='h5'>
+          <span role='img' aria-label='shocked'>
             😱
           </span>
           Your cart is empty

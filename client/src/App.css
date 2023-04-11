@@ -19,8 +19,8 @@ body {
   margin-top: 45px;
   height: 100%;
   width: 100%;
-  background-color: var(--background);
-  background-image: url('./images/main.png');
+  background-color: #f9f6ef;
+  /* background-image: url('./assets/main.webp'); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -28,15 +28,17 @@ body {
 }
 
 .app-content {
-  min-height: calc(150vh - 40px - 16px - 3px - 16px - 500px);
+  margin-top: 150px;
+  margin-bottom: 150px;
 }
 
 /* Nav */
 .logo {
-  max-width: 50%;
+  max-width: 15%;
   height: auto;
   margin-top: -30px;
 }
+
 .scroll-logo {
   max-width: 20%;
   height: 20%;
@@ -44,9 +46,11 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .hidden {
   visibility: hidden;
 }
+
 ul.nav {
   display: flex;
   justify-content: flex-end;
@@ -70,19 +74,21 @@ ul.nav li {
   gap: 1rem;
   height: 15%;
 }
-.bubble {
-    box-shadow: 0 5px 10px 0 rgba(138, 155, 165, 0.15);
-    padding: 10px 0;
-    border-radius: 8px;
-    -webkit-transition : all 0.3s ease-out;
-    transition : all 0.3s ease-out;
+
+/* .bubble {
+  box-shadow: 0 5px 10px 0 rgba(138, 155, 165, 0.15);
+  padding: 10px 0;
+  border-radius: 8px;
+  -webkit-transition : all 0.3s ease-out;
+  transition : all 0.3s ease-out;
 }
+
 .bub {
   height: 12%;
   width: 35% fit-content;
 	-webkit-transition : all 0.3s ease-out;
 	transition : all 0.3s ease-out;
-}
+} */
 
 .nav li {
   margin-right: 15px;
@@ -94,7 +100,7 @@ ul.nav li {
 
 .nav-link {
   text-decoration: none;
-  color: var(--footer);
+  color: black;
   transition: transform 0.3s;
 }
 
@@ -112,11 +118,14 @@ ul.nav li {
   text-align: center;
   color: var(--background);
   font-size: 17px;
-  padding: 26px 34px
+  padding: 26px 34px;
+  /* position: fixed; */
+  bottom: 0;
+  width: 100%;
 }
 
 .footer-container {
-  background-color: var(--footer);
+  background-color: #1d0f8f;
   width: 100%;
 }
 

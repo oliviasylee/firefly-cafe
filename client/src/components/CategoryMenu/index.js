@@ -57,11 +57,12 @@ function CategoryMenu() {
         <Grid item xs={12}>
           <h2>Filter by <FilterListIcon fontSize='small' style={{ color: 'black' }} /></h2>
           {loading ? (
-            <div>Loading...</div>
+            <>Loading...</>
           ) : (
             categoriesWithAll.map((item) => (
               <Button
                 key={item._id}
+                style={{ marginRight: '10px'}}
                 variant='outlined'
                 size='medium'
                 color='info'
