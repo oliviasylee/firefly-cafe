@@ -5,6 +5,7 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import logo from '../../images/logo.png';
 import { Grid } from '@mui/material';
 
+
 function Nav() {
   const [scroll, setScroll] = useState(false);
   useEffect(() => {

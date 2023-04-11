@@ -8,10 +8,10 @@ import Auth from '../../utils/auth';
 import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 
-import './style.css';
 import { IconButton, Box, Button, Typography, List, ListItem, Divider } from '@mui/material';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import CloseIcon from '@mui/icons-material/Close';
+import './style.css';
 
 // Stripe publishable key
 const stripePromise = loadStripe('pk_test_51MvScAJ5laDK23YULksEH64Ogy9CBzjdxJgh52gJ6tHN5HQT91ioRc6B2ar52RUaWkIVx72xIkwnb9Ps9TmHrFjq00xggLFja6');
@@ -69,7 +69,10 @@ const Cart = () => {
     return (
       <Box className="cart-closed">
         <IconButton onClick={toggleCart} aria-label="open cart">
-          <ShoppingCartIcon />
+        <ShoppingBagIcon
+                fontSize='medium'
+                style={{ color: 'black' }}
+              />
         </IconButton>
       </Box>
     );
