@@ -64,7 +64,7 @@ function ProductItem(item) {
                         // gutterBottom variant='h5'
                         component='div'
                         >
-                                Title: {name}
+                                {name}
                         </Link>
                         <Typography variant='body2' color='text.secondary'>
                                 Price: ${price}
@@ -74,6 +74,7 @@ function ProductItem(item) {
                         </Typography>
                         <CardActions>
                             <Button
+                            variant='contained'
                             size='small'
                             onClick={addToCart}  
                             >Add to cart

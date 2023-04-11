@@ -12,6 +12,13 @@
   border-bottom-left-radius: .5rem;
 }
 
+.cart-icon {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+}
+
 .cart h2 {
   font-size: 1.5rem;
   border-bottom: 1px solid var(--dark);
@@ -33,7 +40,7 @@
 
 .cart-closed {
   position: fixed;
-  top: 2%;
+  top: 4%;
   right: 1%;
   font-size: 2rem;
   cursor: pointer;
@@ -44,14 +51,14 @@
   height: 50px;
 }
 
-.cart-closed:hover {
+/* .cart-closed:hover {
   transform: rotate(8deg);
-}
+} */
 
-.cart img {
+/* .cart img {
   width: 70px;
   margin-right: 1rem;
-}
+} */
 
 .cart input {
   width: 50px;

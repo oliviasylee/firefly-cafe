@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Auth from '../../utils/auth';
 import { NavLink } from 'react-router-dom';
-import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+// import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import logo from '../../images/logo.png';
 import { Grid } from '@mui/material';
 
 function Nav() {
   const [scroll, setScroll] = useState(false);
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    window.addEventListener('scroll', () => {
       setScroll(window.scrollY > 50);
     });
   }, []);
@@ -23,7 +23,7 @@ function Nav() {
         <ul className={scroll ? 'nav bubble bub' : 'nav'}>
           <li>
             <NavLink to='/'>
-            <img src={logo} className={scroll ? "scroll-logo" : "hidden"} alt='logo' />
+            <img src={logo} className={scroll ? 'scroll-logo' : 'hidden'} alt='logo' />
             </NavLink>
           </li>
           <li>
@@ -72,14 +72,14 @@ function Nav() {
               </li>
             </>
           )}
-          <li>
+          {/* <li>
             <NavLink to='/cart' className='nav-link'>
               <ShoppingBagIcon
                 fontSize='medium'
                 style={{ color: 'black' }}
               />
             </NavLink>
-          </li>
+          </li> */}
         </ul>
       </Grid>
     </Grid>
