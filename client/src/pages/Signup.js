@@ -37,11 +37,12 @@ const styles = {
   },
   button: {
     marginTop: '50px',
-    color: 'black',
+    color: 'white',
     width: '200px',
-    backgroundColor: '#F4efe6',
+    backgroundColor: 'black',
+    transition: 'background-color 0.2s ease, transform 0.2s ease',
     '&:hover': {
-      backgroundColor: '#efd8c3ff',
+      backgroundColor: 'white',
       transform: 'scale(1.02)',
       color: 'black',
     },

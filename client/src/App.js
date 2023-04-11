@@ -12,6 +12,7 @@ import { StoreProvider } from './utils/GlobalState';
 import Nav from './components/Nav/index';
 import Footer from './components/Footer/index';
 import Cart from './components/Cart/index';
+import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Detail from './pages/Detail';
@@ -49,8 +50,9 @@ function App() {
           <Container maxWidth='xl'>
             <Nav />
             <Cart />
+            {/* <Home /> */}
             <Routes>
-              {/* <Route exact path='/' element={<Home />} /> */}
+              <Route exact path='/' element={<Home />} />
               <Route exact path='/shop' element={<Shop />} />
               <Route exact path='/products/:id' 
                 element={<Detail />} 
@@ -65,7 +67,7 @@ function App() {
         </StoreProvider>
         </div>
         <div className='app-content'>
-          {/* home */}
+          {/* <Home /> */}
         </div>
         <Footer />
       </Router>
