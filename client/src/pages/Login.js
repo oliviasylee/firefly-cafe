@@ -104,7 +104,7 @@ function Login(props) {
         />
         {error ? (
           <div>
-            <p className="error-text">The provided credentials are incorrect.</p>
+            <p className='error-text'>The provided credentials are incorrect.</p>
           </div>
         ) : null}
         <Grid container justifyContent='center'>
