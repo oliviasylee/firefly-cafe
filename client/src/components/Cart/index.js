@@ -8,10 +8,16 @@ import Auth from '../../utils/auth';
 import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 
-import { IconButton, Box, Button, Typography, List, ListItem, Divider } from '@mui/material';
+import './style.css';
+import { IconButton, Box, Button, Typography, List, ListItem, Divider, Link } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import CloseIcon from '@mui/icons-material/Close';
 import './style.css';
+
+import styled, { keyframes } from 'styled-components';
+import { flash } from 'react-animations';
+
+const Flash = styled.span`animation: 3s ${keyframes `${flash}`} infinite`;
 
 // Stripe publishable key
 const stripePromise = loadStripe('sk_test_51MvrAFJmPjVKp8qTid2sZ4Bz9Wlx1mZZWVEnqqwX0ysS4K0qKiQBskUQUtHqCTL29fVsuC6oMHVisebHquI73IRO00V64xgHk3sk_test_51MvrAFJmPjVKp8qTid2sZ4Bz9Wlx1mZZWVEnqqwX0ysS4K0qKiQBskUQUtHqCTL29fVsuC6oMHVisebHquI73IRO00V64xgHk3');
@@ -82,7 +88,9 @@ const Cart = () => {
           <CloseIcon />
         </IconButton>
       </Box>
-      <Typography variant='h4'>Shopping Cart</Typography>
+      <Typography variant='h4' style={{ textAlign: 'center' }}>Cart</Typography>
+      <h5 style={{textAlign: 'center', marginTop:'10px'}}>Free shipping on orders $30+</h5>
+      <Divider />
       {state.cart.length ? (
         <div>
           <List>
@@ -106,13 +114,32 @@ const Cart = () => {
           </Box>
         </div>
       ) : (
-        <Typography variant='h5'>
-          <span role='img' aria-label='shocked'>
-            😱
-          </span>
-          Your cart is empty
+        <Typography 
+          variant='h5' 
+          align='center' 
+          style={{marginTop:'30px', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+        <Flash>Your cart is empty!</Flash>
+          <Button 
+            variant='contained'
+            size='large'
+            component={Link} 
+            to='/shop'
+            sx={{
+              mt: 5,
+              color: 'white',
+              width: '200px',
+              backgroundColor: 'black',
+              transition: 'background-color 0.2s ease, transform 0.2s ease',
+              '&:hover': {
+                backgroundColor: 'white',
+                transform: 'scale(1.02)',
+                color: 'black',
+              },
+            }}>
+            Shop Now
+          </Button>
         </Typography>
-      )}
+            )}
     </Box>
   );
 };

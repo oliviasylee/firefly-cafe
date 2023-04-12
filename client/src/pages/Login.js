@@ -26,7 +26,7 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-around',
     marginBottom: '0',
-    marginTop: '100px'
+    // marginTop: '100px'
   },
   input: {
     marginBottom: '16px',

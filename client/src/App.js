@@ -16,7 +16,6 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Detail from './pages/Detail';
-
 import Shop from './pages/Shop';
 
 import Container from '@mui/material/Container';
@@ -46,28 +45,22 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className='app-wrapper' style={{ position: 'relative' }}>
-        <StoreProvider>
-          <Container maxWidth='xl'>
-            <Nav />
-            <Cart />
-            {/* <Home /> */}
-            <Routes>
-              <Route exact path='/' element={<Home />} />
-              <Route exact path='/shop' element={<Shop />} />
-              <Route exact path='/products/:id' 
-                element={<Detail />} 
-              />
-              {/*<Route exact path='/learn' component={Learn} />
-              <Route exact path='/menu' component={Menu} />*/}
-              <Route exact path='/login' element={<Login />} />
-              <Route exact path='/signup' element={<Signup />} />
-              {/* <Route exact path='/cart' element={<Cart />} /> */}
-            </Routes>
-          </Container>
-        </StoreProvider>
-        </div>
-        <div className='app-content'>
-          {/* <Home /> */}
+          <StoreProvider>
+            <Container maxWidth='xl'>
+              <Nav />
+              <Cart />
+                <Routes>
+                  <Route exact path='/' element={<Home />} />
+                  <Route exact path='/shop' element={<Shop />} />
+                  <Route exact path='/products/:id' element={<Detail />} />
+                  {/*<Route exact path='/learn' component={Learn} />
+                  <Route exact path='/menu' component={Menu} />*/}
+                  <Route exact path='/login' element={<Login />} />
+                  <Route exact path='/signup' element={<Signup />} />
+                  {/* <Route exact path='/cart' element={<Cart />} /> */}
+                </Routes>
+            </Container>
+          </StoreProvider>
         </div>
         <Footer />
       </Router>
