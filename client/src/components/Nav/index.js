@@ -13,6 +13,7 @@ function Nav() {
     });
   }, []);
   return (
+    <header className='header'>
     <Grid container style={{ borderBottom: '1px solid #000', paddingBottom: '10px' }}>
       <Grid item xs={6}>
         <NavLink to='/'>
@@ -83,6 +84,7 @@ function Nav() {
         </ul>
       </Grid>
     </Grid>
+    </header>
   );
 }
 

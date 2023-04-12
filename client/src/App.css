@@ -33,6 +33,11 @@ body {
 }
 
 /* Nav */
+.header {
+  margin-bottom: 50px;
+  /* border-bottom: 1px solid var(--footer); */
+}
+
 .logo {
   max-width: 15%;
   height: auto;
@@ -114,7 +119,6 @@ ul.nav li {
 
 /* Footer */
 .footer {
-  /* margin-top: 70px; */
   text-align: center;
   color: var(--background);
   font-size: 17px;
@@ -127,6 +131,8 @@ ul.nav li {
 .footer-container {
   background-color: #1d0f8f;
   width: 100%;
+  height: 100%;
+  margin-top: 70px;
 }
 
 .socialIcons {
