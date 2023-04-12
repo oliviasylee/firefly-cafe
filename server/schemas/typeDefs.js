@@ -36,6 +36,11 @@ const typeDefs = gql`
     session: ID
   }
 
+  type Newsletter {
+    _id: ID
+    email: String!
+  }
+
   type Auth {
     token: ID!
     user: User
@@ -59,6 +64,7 @@ const typeDefs = gql`
     removeUser: String!
     updateProduct(_id: ID!, quantity: Int!): Product
     addOrder(products: [ID!]): Order
+    subscribeEmail(email: String!): Newsletter
   }
 `;
 

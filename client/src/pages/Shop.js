@@ -15,6 +15,6 @@ function Shop() {
       </Grid>
     </Grid>
   );
-};
+}
 
 export default Shop;

@@ -52,7 +52,7 @@ function ProductList() {
       <Grid container spacing={2}>
         {state.products.length ? (
           filterProducts().map((product) => (
-            <Grid item key={product._id} xs={12} sm={6} md={4} lg={3}>
+            <Grid item key={product._id} xs={12} sm={6} md={4} lg={3} style={{ marginBottom: '50px' }}>
               <ProductItem
                 _id={product._id}
                 image={product.image}

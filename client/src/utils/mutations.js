@@ -51,3 +51,12 @@ export const ADD_ORDER = gql`
     }
   }
 `;
+
+export const SUBSCRIBE_EMAIL = gql`
+  mutation SubscribeEmail($email: String!) {
+    subscribeEmail(email: $email) {
+      _id
+      email
+    }
+  }
+`;
