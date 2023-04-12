@@ -87,7 +87,7 @@ function Detail() {
           <Grid item xs={12}>
             {currentProduct && cart ? (
               <>
-              <br /><br />
+              <br />
                 <Link to='/shop'>← Back to Products</Link><br /><br /><br />
                 <img
                   src={`/images/${currentProduct.image}`}
@@ -99,16 +99,43 @@ function Detail() {
                   <strong>Price: </strong>${currentProduct.price}{' '} <br /> <br />
                   <Button 
                     variant='contained' 
-                    size='medium'
-                    onClick={addToCart}>
+                    size='small'
+                    onClick={addToCart}
+                    sx={{
+                      mt: 2,
+                      color: 'white',
+                      width: '200px',
+                      backgroundColor: 'black',
+                      transition: 'background-color 0.2s ease, transform 0.2s ease',
+                      '&:hover': {
+                          backgroundColor: 'white',
+                          transform: 'scale(1.02)',
+                          color: 'black',
+                      },
+                      padding: '5px'
+                      }}>
+                    
                       Add to Cart
                   </Button>
                   <Button
                     variant='contained'
-                    size='medium'
+                    size='small'
                     disabled={!cart.find((p) => p._id === currentProduct._id)}
                     onClick={removeFromCart}
-                    style={{ marginLeft: '10px' }}>
+                    sx={{
+                      mt: 2,
+                      color: 'white',
+                      width: '200px',
+                      backgroundColor: 'black',
+                      transition: 'background-color 0.2s ease, transform 0.2s ease',
+                      '&:hover': {
+                          backgroundColor: 'white',
+                          transform: 'scale(1.02)',
+                          color: 'black',
+                      },
+                      padding: '5px',
+                      marginLeft: '10px'
+                      }}>
                     Remove from Cart
                   </Button>
                 </p>

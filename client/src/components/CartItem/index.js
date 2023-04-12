@@ -39,32 +39,36 @@ const CartItem = ({ item }) => {
       <Grid item xs={12} sm={4}>
         <Box display='flex' alignItems='center'>
           <img src={`/images/${item.image}`} alt='' height='70' />
-          <Box ml={2}>
-            <Typography variant='subtitle1'>{item.name}</Typography>
-            <Typography variant='body2' color='textSecondary'>${item.price}</Typography>
+          <Box mr={2} ml={2}>
+            <Typography variant='subtitle1' style={{ marginBottom: '0.3rem' }}>{item.name}</Typography>
+            <Typography variant='body2' color='textSecondary' style={{ marginBottom: '0.3rem' }}>${item.price}</Typography>
           </Box>
         </Box>
       </Grid>
       <Grid item xs={12} sm={2}>
-        <Box display='flex' alignItems='center'>
-          <Typography variant='body2'>Qty:</Typography>
+        <Box display='flex' alignItems='center' justifyContent='center'>
+        <Box mr={3}>
+          <Typography variant='body2' style={{ marginRight: '0.5rem' }}>Qty:</Typography>
           <input
             type='number'
             placeholder='1'
             min='1'
             value={item.purchaseQuantity}
             onChange={onChange}
-            style={{ margin: '0 5px', width: '30px' }}
+            style={{ margin: '0 5px 0 0', width: '30px' }}
           />
         </Box>
+        </Box>
+      </Grid>
+      <Grid item xs={12} sm={2} style={{ justifyContent: 'center' }}>
+        <Typography variant='body2' style={{ textAlign: 'center' }}>Total: ${item.price * item.purchaseQuantity}</Typography>
       </Grid>
       <Grid item xs={12} sm={2}>
-        <Typography variant='body2'>Total: ${item.price * item.purchaseQuantity}</Typography>
-      </Grid>
-      <Grid item xs={12} sm={2}>
-        <IconButton aria-label='delete' onClick={() => removeFromCart(item)}>
-          <DeleteIcon />
-        </IconButton>
+        <Box display='flex' alignItems='center' justifyContent='center'>
+          <IconButton aria-label='delete' onClick={() => removeFromCart(item)} style={{ margin: '0 0.5rem' }}>
+            <DeleteIcon />
+          </IconButton>
+        </Box>
       </Grid>
     </Grid>
   );
