@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Product, Category, Order } = require('../models');
+const { User, Product, Category, Order, Newsletter } = require('../models');
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')("sk_test_51MvrAFJmPjVKp8qTid2sZ4Bz9Wlx1mZZWVEnqqwX0ysS4K0qKiQBskUQUtHqCTL29fVsuC6oMHVisebHquI73IRO00V64xgHk3");
 
@@ -161,7 +161,15 @@ const resolvers = {
 
       throw new AuthenticationError('You are Not logged In.')
     },
-
+    subscribeEmail: async (parent, { email }) => {
+      try {
+        const newsletter = await Newsletter.create({ email });
+        return newsletter;
+      } catch (error) {
+        console.error(error);
+        throw new Error('Failed to subscribe to newsletter.');
+      }
+    },            
   },
 };
 
