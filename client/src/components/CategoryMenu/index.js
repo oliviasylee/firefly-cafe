@@ -55,7 +55,7 @@ function CategoryMenu() {
     <Container maxWidth='lg'>
       <Grid container>
         <Grid item xs={12}>
-          <h2>Filter by <FilterListIcon fontSize='small' style={{ color: 'black' }} /></h2>
+        <h2 style={{ marginTop: '0' }}>Filter by <FilterListIcon fontSize='small' style={{ color: 'black', margin: '0' }} /></h2>
           {loading ? (
             <>Loading...</>
           ) : (

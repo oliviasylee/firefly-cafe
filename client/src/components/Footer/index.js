@@ -7,31 +7,30 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 
 function Footer () {
   return (
-    <div className="footer-container">
-    <footer className='footer'>
-      <Grid container>
+    <footer className='footer-container'>
+      <Grid container className='footer' component='footer'>
         <Grid item xs={12}>
           <ul className='socialIcons'>
             <li>
-            <a href='#'>
+            <a href='/'>
                   <FacebookIcon fontSize='large' style={{ color: 'white' }}>
                   </FacebookIcon>
                 </a>
             </li>
             <li>
-            <a href='#'>
+            <a href='/'>
                   <TwitterIcon fontSize='large' style={{ color: 'white' }}>
                   </TwitterIcon>
                 </a>
             </li>
             <li>
-            <a href='#'>
+            <a href='/'>
                   <InstagramIcon fontSize='large' style={{ color: 'white' }}>
                   </InstagramIcon>
                 </a>
             </li>
             <li>
-            <a href='#'>
+            <a href='/'>
                   <YouTubeIcon fontSize='large' style={{ color: 'white' }}>
                   </YouTubeIcon>
                 </a>
@@ -46,7 +45,7 @@ function Footer () {
         </Grid>
       </Grid>
   </footer>
-  </div>
+  // </div>
   );
 }
 
