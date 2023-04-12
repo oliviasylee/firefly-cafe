@@ -20,7 +20,7 @@ import { flash } from 'react-animations';
 const Flash = styled.span`animation: 3s ${keyframes `${flash}`} infinite`;
 
 // Stripe publishable key
-const stripePromise = loadStripe('pk_test_51MvScAJ5laDK23YULksEH64Ogy9CBzjdxJgh52gJ6tHN5HQT91ioRc6B2ar52RUaWkIVx72xIkwnb9Ps9TmHrFjq00xggLFja6');
+const stripePromise = loadStripe('sk_test_51MvrAFJmPjVKp8qTid2sZ4Bz9Wlx1mZZWVEnqqwX0ysS4K0qKiQBskUQUtHqCTL29fVsuC6oMHVisebHquI73IRO00V64xgHk3sk_test_51MvrAFJmPjVKp8qTid2sZ4Bz9Wlx1mZZWVEnqqwX0ysS4K0qKiQBskUQUtHqCTL29fVsuC6oMHVisebHquI73IRO00V64xgHk3');
 
 const Cart = () => {
   const [state, dispatch] = useStoreContext();

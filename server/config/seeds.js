@@ -39,14 +39,6 @@ db.once('open', async () => {
             quantity: 30,
             category: categories[2]._id
         },
-        {
-            name: 'Flying Penguin Hat',
-            price: 34.99,
-            image: '',
-            description: 'HAT',
-            quantity: 10,
-            category: categories[3]._id
-        },
     ])
     console.log('products seeded');
     
@@ -73,7 +65,6 @@ db.once('open', async () => {
         password: 'password12345',
         orders: [
         {
-            products: [products[0]._id, products[3]._id]
         }
         ]
     });
