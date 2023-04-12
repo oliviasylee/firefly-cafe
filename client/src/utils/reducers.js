@@ -12,6 +12,7 @@ import {
 } from "./actions";
 
 export const reducer = (state, action) => {
+    // console.log("ACTION TYPE:", action.type)
     switch (action.type) {
         case UPDATE_PRODUCTS:
             return {
