@@ -17,6 +17,7 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Detail from './pages/Detail';
 import Shop from './pages/Shop';
+import Success from './pages/Success';
 
 import Container from '@mui/material/Container';
 import './App.css';
@@ -58,6 +59,7 @@ function App() {
                   <Route exact path='/login' element={<Login />} />
                   <Route exact path='/signup' element={<Signup />} />
                   {/* <Route exact path='/cart' element={<Cart />} /> */}
+                  <Route exact path='/success' element={<Success />} />
                 </Routes>
             </Container>
           </StoreProvider>
