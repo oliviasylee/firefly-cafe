@@ -12,6 +12,7 @@ import './style.css';
 import { IconButton, Box, Button, Typography, List, ListItem, Divider, Link } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import CloseIcon from '@mui/icons-material/Close';
+import './style.css';
 
 import styled, { keyframes } from 'styled-components';
 import { flash } from 'react-animations';
