@@ -1,8 +1,6 @@
 // use this to decode a token and get the user's information out of it
 import decode from 'jwt-decode';
 
-const secret = 'mysecretshhhh'
-const expiration = 'sh'
 
 // create a new class to instantiate for a user
 class AuthService {
@@ -37,7 +35,7 @@ class AuthService {
 
   login(idToken) {
     // Saves user token to localStorage
-    localStorage.setItem('id_token', secret,  idToken);
+    localStorage.setItem('id_token',  idToken);
     window.location.assign('/');
   }
 
@@ -46,11 +44,6 @@ class AuthService {
     localStorage.removeItem('id_token');
     // this will reload the page and reset the state of the application
     window.location.assign('/');
-  }
-  signToken({ firstName, email, _id}) {
-      const payload = { firstName, email, _id}
-
-      return decode.sign({ data: payload }, secret, {expiresIn: expiration})
   }
 }
 
