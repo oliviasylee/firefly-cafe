@@ -9,7 +9,7 @@ import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 
 import { IconButton, Box, Button, Typography, List, ListItem, Divider } from '@mui/material';
-import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import CloseIcon from '@mui/icons-material/Close';
 import './style.css';
 
