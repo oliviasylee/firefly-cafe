@@ -88,8 +88,8 @@ const Cart = () => {
           <CloseIcon />
         </IconButton>
       </Box>
-      <Typography variant='h4' style={{ textAlign: 'center' }}>Cart</Typography>
-      <h5 style={{textAlign: 'center', marginTop:'10px'}}>Free shipping on orders $30+</h5>
+        <Typography variant='h4' style={{ textAlign: 'center' }}>Cart</Typography>
+        <h5 style={{textAlign: 'center', marginTop:'10px'}}>Free shipping on orders $30+</h5>
       <Divider />
       {state.cart.length ? (
         <div>
@@ -102,15 +102,54 @@ const Cart = () => {
           </List>
           <Divider />
           <Box className='flex-row space-between'>
-            <Typography variant='h6'>Total: ${calculateTotal()}</Typography>
+            <Typography variant='h6' sx={{ display: 'flex', justifyContent: 'center', marginTop:'20px'}}>Total: ${calculateTotal()}</Typography>
 
             {Auth.loggedIn() ? (
-              <Button onClick={submitCheckout} variant='contained' color='primary'>
+              <Typography sx={{ display: 'flex', justifyContent: 'center', marginTop:'10px'}}>
+              <Button 
+                onClick={submitCheckout} variant='contained'
+                size='small'
+                sx={{
+                  mt: 5,
+                  color: 'white',
+                  width: '300px',
+                  backgroundColor: 'black',
+                  transition: 'background-color 0.2s ease, transform 0.2s ease',
+                  '&:hover': {
+                    backgroundColor: 'white',
+                    transform: 'scale(1.02)',
+                    color: 'black',
+                  },
+                  margin: '10px',
+                  marginBottom: '30px'
+                  }}>
                 Checkout
               </Button>
+              </Typography>
             ) : (
-              <Typography>(log in to check out)</Typography>
-            )}
+              <Typography sx={{ display: 'flex', justifyContent: 'center', marginTop:'10px'}}>
+              <Button
+                variant='contained'
+                size='small'
+                href='/login'
+                sx={{
+                  mt: 5,
+                  color: 'white',
+                  width: '300px',
+                  backgroundColor: 'black',
+                  transition: 'background-color 0.2s ease, transform 0.2s ease',
+                  '&:hover': {
+                    backgroundColor: 'white',
+                    transform: 'scale(1.02)',
+                    color: 'black',
+                  },
+                  margin: '10px',
+                  marginBottom: '30px'
+                }}>
+                Log in to check out
+              </Button>
+            </Typography>
+              )}
           </Box>
         </div>
       ) : (
@@ -122,8 +161,7 @@ const Cart = () => {
           <Button 
             variant='contained'
             size='large'
-            component={Link} 
-            to='/shop'
+            href='/shop'
             sx={{
               mt: 5,
               color: 'white',

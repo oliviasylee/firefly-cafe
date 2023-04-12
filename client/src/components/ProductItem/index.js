@@ -61,7 +61,6 @@ function ProductItem(item) {
                     <CardContent>
                         <Link
                         to={`/products/${_id}`}
-                        // gutterBottom variant='h5'
                         component='div'
                         >
                                 {name}
@@ -73,12 +72,25 @@ function ProductItem(item) {
                             {quantity} {pluralize("item", quantity)} in stock
                         </Typography>
                         <CardActions>
-                            <Button
+                        <Button 
                             variant='contained'
                             size='small'
-                            onClick={addToCart}  
-                            >Add to cart
-                            </Button>
+                            onClick={addToCart} 
+                            sx={{
+                            mt: 2,
+                            color: 'white',
+                            width: '200px',
+                            backgroundColor: 'black',
+                            transition: 'background-color 0.2s ease, transform 0.2s ease',
+                            '&:hover': {
+                                backgroundColor: 'white',
+                                transform: 'scale(1.02)',
+                                color: 'black',
+                            },
+                            marginTop: '40px'
+                            }}>
+                            Add to cart
+                        </Button>
                         </CardActions>
                     </CardContent>
                 </Card>
