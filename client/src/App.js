@@ -19,6 +19,7 @@ import Detail from './pages/Detail';
 import Shop from './pages/Shop';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
+import Learn from './pages/Learn';
 
 import Container from '@mui/material/Container';
 import './App.css';
@@ -55,8 +56,8 @@ function App() {
                   <Route exact path='/' element={<Home />} />
                   <Route exact path='/shop' element={<Shop />} />
                   <Route exact path='/products/:id' element={<Detail />} />
-                  {/*<Route exact path='/learn' component={Learn} />
-                  <Route exact path='/menu' component={Menu} />*/}
+                  <Route exact path='/learn' element={<Learn />} />
+                  {/*<Route exact path='/menu' component={Menu} />*/}
                   <Route exact path='/login' element={<Login />} />
                   <Route exact path='/signup' element={<Signup />} />
                   <Route exact path='/success' element={<Success />} />
