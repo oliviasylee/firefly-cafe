@@ -6,7 +6,7 @@ import { idbPromise } from '../../utils/helpers';
 import CartItem from '../CartItem';
 import Auth from '../../utils/auth';
 import { useStoreContext } from '../../utils/GlobalState';
-import { TOGGLE_CART, ADD_MULTIPLE_TO_CART, ADD_TO_CART } from '../../utils/actions';
+import { TOGGLE_CART, UPDATE_CART } from '../../utils/actions';
 
 import './style.css';
 import { IconButton, Box, Button, Typography, List, ListItem, Divider } from '@mui/material';
@@ -37,7 +37,7 @@ const Cart = () => {
   useEffect(() => {
     async function getCart() {
       const cart = await idbPromise('cart', 'get');
-      dispatch({ type: UPDATE_CART_QUANTITY, products: [...cart] });
+      dispatch({ type: UPDATE_CART, products: [...cart] });
     }
 
     if (!state.cart.length) {
