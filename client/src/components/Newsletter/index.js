@@ -56,12 +56,11 @@ function Newsletter () {
           className='button'
           type='submit'
           variant='contained'
-          // color='warning'
           endIcon={<SendIcon />}
           fullWidth
-          style={{ backgroundColor: '#f75c1d' }}
+          style={{ backgroundColor: '#8d93d9' }}
         >
-          Subscribe
+          SUBSCRIBE
         </Button>
         <p>{message}</p>
       </FormControl>
