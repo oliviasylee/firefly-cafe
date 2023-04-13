@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 import { Grid } from '@mui/material';
 
-
 function Nav() {
   const [scroll, setScroll] = useState(false);
   useEffect(() => {
@@ -13,6 +12,7 @@ function Nav() {
       setScroll(window.scrollY > 50);
     });
   }, []);
+  
   return (
     <header className='header'>
     <Grid container style={{ borderBottom: '1px solid #000', paddingBottom: '10px' }}>
