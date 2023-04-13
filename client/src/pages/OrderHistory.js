@@ -10,6 +10,9 @@ function OrderHistory() {
 
   if (data) {
     user = data.user;
+    console.log(user)
+  } else {
+    console.log(user)
   }
 
   return (

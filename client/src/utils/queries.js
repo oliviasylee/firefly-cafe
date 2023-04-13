@@ -56,7 +56,7 @@ export const QUERY_CHECKOUT = gql `
 `;
 
 export const QUERY_USER = gql`
-  {
+  query Query{
     user {
       firstName
       lastName
