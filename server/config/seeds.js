@@ -5,10 +5,9 @@ db.once('open', async () => {
     await Category.deleteMany();
 
     const categories = await Category.insertMany([
-        { name: 'Food' },
-        { name: 'Coffee' },
+        { name: 'CoffeeBean' },
         { name: 'GiftCards' },
-        { name: 'GiftShop'}
+        { name: 'Goods'}
       ]);
     console.log('categories seeded');
 
@@ -16,26 +15,26 @@ db.once('open', async () => {
 
     const products = await Product.insertMany([
         {
-            name: 'Sandwich',
-            price: 4.99,
-            image: '',
-            description: 'Classic Sandwhich',
-            quantity: 30,
-            category: categories[0]._id
-        },
-        {
             name: 'Single-Origin',
             price: 10.99,
             image: 'One 12 oz bag of seasonal, fresh-roasted coffees selected every two weeks by our Coffee Department and delivered directly to you',
             description: 'Coffe Beans',
             quantity: 30,
-            category: categories[1]._id
+            category: categories[0]._id
         },
         {
             name: 'Gift Card',
             price: 99.99,
             image: '',
             description: '100$ Gift card',
+            quantity: 30,
+            category: categories[1]._id
+        },
+        {
+            name: 'Firefly Cafe Mug',
+            price: 10.99,
+            image: '',
+            description: 'Mug',
             quantity: 30,
             category: categories[2]._id
         },
@@ -65,6 +64,7 @@ db.once('open', async () => {
         password: 'password12345',
         orders: [
         {
+            products: [products[1]._id, products[2]._id]
         }
         ]
     });

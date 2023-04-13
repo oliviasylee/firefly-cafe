@@ -13,6 +13,7 @@ import Home from './pages/Home';
 import Nav from './components/Nav/index';
 import Footer from './components/Footer/index';
 import Cart from './components/Cart/index';
+
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Detail from './pages/Detail';
@@ -20,6 +21,7 @@ import Shop from './pages/Shop';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
 import Learn from './pages/Learn';
+import Menu from './pages/Menu';
 
 import Container from '@mui/material/Container';
 import './App.css';
@@ -57,7 +59,7 @@ function App() {
                   <Route exact path='/shop' element={<Shop />} />
                   <Route exact path='/products/:id' element={<Detail />} />
                   <Route exact path='/learn' element={<Learn />} />
-                  {/*<Route exact path='/menu' component={Menu} />*/}
+                  <Route exact path='/menu' element={<Menu />}  />
                   <Route exact path='/login' element={<Login />} />
                   <Route exact path='/signup' element={<Signup />} />
                   <Route exact path='/success' element={<Success />} />
