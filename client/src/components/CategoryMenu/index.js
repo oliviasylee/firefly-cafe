@@ -67,14 +67,13 @@ function CategoryMenu() {
                 onClick={() => {
                   handleClick(item._id);
                 }}>
-               <Typography
+                <Typography
                   component='span'
                   sx={{
                     color: 'black',
                     borderBottom: currentCategory === item._id ? '2px solid black' : 'none',
                     fontWeight: (currentCategory === item._id || (!currentCategory && item._id === 'all')) ? 'bold' : 'normal',
                   }}>
-                  
                   {item.name}
                 </Typography>
               </Button>

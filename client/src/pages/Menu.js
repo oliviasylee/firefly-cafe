@@ -66,16 +66,16 @@ function Menu() {
   return (
     <Container maxWidth='lg'>
       <Grid container>
-      <Grid item xs={12}>
-        <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Our menu</h2>
-      </Grid>
+        <Grid item xs={12}>
+          <h2 style={{ textAlign: 'center', marginBottom: '40px' }}>Our menu</h2>
+        </Grid>
       <Grid container spacing={2}>
         <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center', marginBottom: '30px' }}>
           {['coffee', 'non-coffee', 'desserts', 'food'].map((categoryName) => (
             <Button 
               key={categoryName}
               variant='text' 
-              sx={{ mr: 1, color: 'black' }} 
+              sx={{ mr: 3, color: 'black' }} 
               onClick={() => handleCategoryClick(categoryName)}
             >
               {category === categoryName ? (
@@ -86,9 +86,8 @@ function Menu() {
             </Button>
           ))}
         </Grid>
-        {filteredCards.map((card, index) => (
           <Grid container spacing={2} justifyContent='center'>
-          {filteredCards.map((card, index) => (
+            {filteredCards.map((card, index) => (
             <Grid item xs={12} md={6} key={index}>
                 <Box sx={{ p: 2 }}>
                   <Typography variant='body3' color='text.secondary'>
@@ -102,11 +101,10 @@ function Menu() {
                   </ul>
                   </Typography>
                 </Box>
-            </Grid>
-          ))}
+              </Grid>
+            ))}
+          </Grid>
         </Grid>
-        ))}
-      </Grid>
       </Grid>
     </Container>
   );
