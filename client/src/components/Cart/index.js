@@ -84,7 +84,7 @@ const Cart = () => {
   console.log("STATE CART: ", state.cart)
 
   return (
-    <Box className='cart'>
+    <Box className='cart' sx={{ zIndex: 1 }}>
       <Box>
         <IconButton className='close' onClick={toggleCart} aria-label='close cart'>
           <CloseIcon />
