@@ -13,6 +13,7 @@ import {
   Grid, 
   Button, 
   Typography,
+  Divider
 } from '@mui/material';
 import FilterListIcon from '@mui/icons-material/FilterList';
 
@@ -54,7 +55,7 @@ function CategoryMenu() {
       <Grid container>
         <Grid item xs={12}>
           <h2 style={{ marginTop: '0' }}>
-            Filter by <FilterListIcon fontSize='small' style={{ color: 'black', margin: '0' }} />
+            Filter by <FilterListIcon fontSize='medium' style={{ color: 'black', margin: '0' }} />
           </h2>
           {loading ? (
             <>Loading...</>
@@ -79,6 +80,7 @@ function CategoryMenu() {
               </Button>
             ))
           )}
+          <Divider sx={{ my: 2 }} />
         </Grid>
       </Grid>
     </Container>

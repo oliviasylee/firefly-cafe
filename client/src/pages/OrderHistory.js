@@ -1,8 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import { Box, Typography, Grid, Container } from '@mui/material';
 import { QUERY_USER } from '../utils/queries';
+
+import { 
+  Box, 
+  Typography, 
+  Grid, 
+  Container,
+  Divider,
+} from '@mui/material';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 function OrderHistory() {
   const { data } = useQuery(QUERY_USER);
@@ -21,7 +29,11 @@ function OrderHistory() {
       <Grid container>
         <Grid item xs={12}>
           <Box sx={{ my: 1 }}>
-            <Link to='/shop'>← Back to Products</Link>
+            <Link to='/shop' style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+            <ArrowBackIcon />
+            <h3 style={{ marginLeft: '5px' }}>Back to Products</h3>
+            </Link>
+            <Divider sx={{ my: 1 }} />
         {user ? (
           <>
             <Typography variant='h4' sx={{ mt: 2 }}>
@@ -57,12 +69,12 @@ function OrderHistory() {
             ))}
           </>
         ) : (
-          <Typography variant='h5' sx={{ my: 2 }}><br />
-            Please <Link to='/login'>log in</Link> to view your order history.
-          </Typography>
+          <Typography variant='h5' sx={{ my: 2, mb: 20, mt: 5 }}>
+          Please <Link to='/login'>log in</Link> to view your order history.
+        </Typography>
         )}
-      </Box>
-      </Grid>
+          </Box>
+        </Grid>
       </Grid>
       </Container>
     </>
