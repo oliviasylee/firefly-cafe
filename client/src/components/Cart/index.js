@@ -97,10 +97,9 @@ const Cart = () => {
         <div>
           <List>
             {state.cart.map((item) => (
-       
-             <ListItem key={item._id}>
-                <CartItem item={item} />
-              </ListItem>
+            <ListItem key={item._id}>
+              <CartItem item={item} />
+            </ListItem>
             ))}
           </List>
           <Divider />
