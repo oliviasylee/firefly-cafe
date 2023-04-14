@@ -5,6 +5,7 @@ import {
   Typography,
   Button,
   Box,
+  Divider,
 } from '@mui/material';
 
 const cards = [    
@@ -48,7 +49,7 @@ const cards = [
       { name: 'GRILLED CHEESE SANDWICH', description: "AKA a cheese toastie... we shouldn't have to explain" },
       { name: 'ALMOST FAMOUS CHICKEN SALAD', description: 'By the half pound' },
       { name: 'TOMATO SOUP', description: 'It is literally all in the name' },
-      { name: 'AVOCAO TOAST', description: 'our avocado toast is the perfect breakfast or brunch option with a twist' },
+      { name: 'AVOCAO TOAST', description: 'Our avocado toast is the perfect breakfast or brunch option with a twist' },
       { name: 'OVERNIGHT OATS', description: 'Oats, yogurt, skim milk, fresh fruit, & optional granola' },
     ]
   }
@@ -75,7 +76,7 @@ function Menu() {
             <Button 
               key={categoryName}
               variant='text' 
-              sx={{ mr: 3, color: 'black' }} 
+              sx={{ m: 1, p: 2, textAlign: 'center', color: 'black' }} 
               onClick={() => handleCategoryClick(categoryName)}
             >
               {category === categoryName ? (
@@ -83,19 +84,21 @@ function Menu() {
               ) : (
                 categoryName
               )}
+              <Divider />
             </Button>
           ))}
         </Grid>
           <Grid container spacing={2} justifyContent='center'>
             {filteredCards.map((card, index) => (
             <Grid item xs={12} md={6} key={index}>
+              <Divider sx={{ my: 1 }} />
                 <Box sx={{ p: 2 }}>
                   <Typography variant='body3' color='text.secondary'>
                   <ul style={{ listStyleType: 'none', paddingLeft: 0 }}>
                     {card.items.map((item, index) => (
                       <li key={index} style={{textAlign: 'center', marginBottom: '45px'}}>
-                        <div style={{ fontWeight: 'bold' }}>{item.name}</div>
-                        <div style={{ fontSize: '16px', color: '#666' }}>{item.description}</div>
+                        <div style={{ fontWeight: 'bold', marginBottom: '10px' }}>{item.name}</div>
+                        <div style={{ fontSize: '18px', color: '#666' }}>{item.description}</div>
                       </li>
                     ))}
                   </ul>

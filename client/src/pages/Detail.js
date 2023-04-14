@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-
 import Cart from '../components/Cart';
 import { useStoreContext } from '../utils/GlobalState';
 import {
@@ -12,9 +11,15 @@ import {
 } from '../utils/actions';
 import { QUERY_PRODUCTS } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
-import spinner from '../assets/spinner.gif';
 
-import { Container, Grid, Button } from '@mui/material';
+import { 
+  Container, 
+  Grid, 
+  Button,
+  Divider
+} from '@mui/material';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import spinner from '../assets/spinner.gif';
 
 function Detail() {
   const [state, dispatch] = useStoreContext();
@@ -87,8 +92,11 @@ function Detail() {
           <Grid item xs={12}>
             {currentProduct && cart ? (
               <>
-              <br />
-                <Link to='/shop'>← Back to Products</Link><br /><br /><br />
+              <Link to='/shop' style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+                <ArrowBackIcon />
+                <h3 style={{ marginLeft: '5px' }}>Back to Products</h3>
+              </Link>
+              <Divider sx={{ my: 2, mb: 5 }} />
                 <img
                   src={`/images/${currentProduct.image}`}
                   alt={currentProduct.name}
@@ -114,7 +122,6 @@ function Detail() {
                       },
                       padding: '5px'
                       }}>
-                    
                       Add to Cart
                   </Button>
                   <Button
