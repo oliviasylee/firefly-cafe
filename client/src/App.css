@@ -1,7 +1,5 @@
 :root {
   --background: #f9f6efff;
-  --lightgrey: #f3f3f3ff ;
-  --footer: #333333;
 }
 
 * {
@@ -19,8 +17,7 @@ body {
   margin-top: 45px;
   height: 100%;
   width: 100%;
-  background-color: #f9f6ef;
-  /* background-image: url('./assets/main.webp'); */
+  background-color: var(--background);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -43,7 +40,7 @@ body {
   height: auto;
   margin-top: -30px;
 }
-
+/* 
 .scroll-logo {
   max-width: 20%;
   height: 20%;
@@ -54,7 +51,7 @@ body {
 
 .hidden {
   visibility: hidden;
-}
+} */
 
 ul.nav {
   display: flex;
@@ -137,7 +134,6 @@ ul.nav li {
   color: var(--background);
   font-size: 17px;
   padding: 26px 34px;
-  /* position: fixed; */
   bottom: 0;
   width: 100%;
 }
