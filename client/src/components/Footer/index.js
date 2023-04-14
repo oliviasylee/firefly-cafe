@@ -47,8 +47,7 @@ function Footer () {
           </p>
         </Grid>
       </Grid>
-  </footer>
-  // </div>
+    </footer>
   );
 }
 
