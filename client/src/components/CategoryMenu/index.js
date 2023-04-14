@@ -12,15 +12,13 @@ import {
   Container,
   Grid, 
   Button, 
-  } from '@mui/material';
+  Typography,
+} from '@mui/material';
 import FilterListIcon from '@mui/icons-material/FilterList';
 
 function CategoryMenu() {
-  
   const [state, dispatch] = useStoreContext();
-
-  const { categories } = state;
-
+  const { categories, currentCategory } = state;
   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
 
   useEffect(() => {
@@ -55,22 +53,30 @@ function CategoryMenu() {
     <Container maxWidth='lg'>
       <Grid container>
         <Grid item xs={12}>
-        <h2 style={{ marginTop: '0' }}>Filter by <FilterListIcon fontSize='small' style={{ color: 'black', margin: '0' }} /></h2>
+          <h2 style={{ marginTop: '0' }}>
+            Filter by <FilterListIcon fontSize='small' style={{ color: 'black', margin: '0' }} />
+          </h2>
           {loading ? (
             <>Loading...</>
           ) : (
             categoriesWithAll.map((item) => (
               <Button
                 key={item._id}
-                style={{ marginRight: '10px'}}
-                variant='outlined'
-                size='medium'
-                color='info'
+                variant='text'
+                sx={{ mr: 1, color: 'black' }} 
                 onClick={() => {
                   handleClick(item._id);
-                }}
-              >
-                {item.name}
+                }}>
+               <Typography
+                  component='span'
+                  sx={{
+                    color: 'black',
+                    borderBottom: currentCategory === item._id ? '2px solid black' : 'none',
+                    fontWeight: (currentCategory === item._id || (!currentCategory && item._id === 'all')) ? 'bold' : 'normal',
+                  }}>
+                  
+                  {item.name}
+                </Typography>
               </Button>
             ))
           )}
