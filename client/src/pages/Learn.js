@@ -12,9 +12,9 @@ function Learn() {
       <Grid container>
         <Grid item xs={12}>
         <h2 style={{ textAlign: 'center', fontSize: '1.5rem', }}>
-          "Coffee is a social binder, a warmer of tongues, a soberer of minds, a stimulant of wit, a foiler of sleep if you want it so. From roadside mugs to the classic demi-tasse, it is the perfect democrat." <br />
-          <h5 style={{ fontWeight: 300 }}>- Richard Selzer, "Coffee and Repartee," 1979 </h5>
-          </h2><br />
+          "Coffee is a social binder, a warmer of tongues, a soberer of minds, a stimulant of wit, a foiler of sleep if you want it so. From roadside mugs to the classic demi-tasse, it is the perfect democrat." <br /></h2>
+          <h4 style={{ textAlign: 'center',fontWeight: 300 }}>- Richard Selzer, "Coffee and Repartee," 1979 </h4>
+          <br />
           <Divider sx={{ my: 1 }} />
           <Grid container>
             <Grid item xs={12} sm={4}>

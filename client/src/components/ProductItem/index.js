@@ -4,14 +4,14 @@ import { useStoreContext } from '../../utils/GlobalState';
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
 import { pluralize, idbPromise } from '../../utils/helpers'
 import { 
-  Grid,
-  Container,
-  Card,  
-  CardActions,
-  CardContent,
-  CardMedia,
-  Button,
-  Typography
+Grid,
+Container,
+Card,  
+CardActions,
+CardContent,
+CardMedia,
+Button,
+Typography
 } from '@mui/material';
 
 function ProductItem(item) {

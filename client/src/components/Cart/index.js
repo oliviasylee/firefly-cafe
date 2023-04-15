@@ -84,7 +84,7 @@ const Cart = () => {
   console.log("STATE CART: ", state.cart)
 
   return (
-    <Box className='cart'>
+    <Box className='cart' sx={{ zIndex: 1 }}>
       <Box>
         <IconButton className='close' onClick={toggleCart} aria-label='close cart'>
           <CloseIcon />
@@ -97,10 +97,9 @@ const Cart = () => {
         <div>
           <List>
             {state.cart.map((item) => (
-       
-             <ListItem key={item._id}>
-                <CartItem item={item} />
-              </ListItem>
+            <ListItem key={item._id}>
+              <CartItem item={item} />
+            </ListItem>
             ))}
           </List>
           <Divider />
