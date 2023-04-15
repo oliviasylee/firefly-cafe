@@ -49,7 +49,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className='app-wrapper' style={{ position: 'relative' }}>
+        {/* <div className='app-wrapper' style={{ position: 'relative' }}> */}
           <StoreProvider>
             <Container maxWidth='xl'>
               <Nav />
@@ -67,7 +67,7 @@ function App() {
                 </Routes>
             </Container>
           </StoreProvider>
-        </div>
+        {/* </div> */}
         <Footer />
       </Router>
     </ApolloProvider>
