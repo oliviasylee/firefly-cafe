@@ -11,8 +11,6 @@ function OrderHistory() {
   if (data) {
     user = data.user;
     console.log(user)
-  } else {
-    console.log(user)
   }
 
   return (
@@ -27,13 +25,15 @@ function OrderHistory() {
             <Typography variant='h4' sx={{ mt: 2 }}>
               Order History for {user.firstName} {user.lastName}
             </Typography>
-            {user.orders.map((order) => (
-              <Box key={order._id} sx={{ my: 2 }}>
+          {console.log(user.orders)}
+            {user.orders.map((orders) => (
+              <Box key={orders._id} sx={{ my: 2 }}>
                 <Typography variant='h5'>
-                  {new Date(parseInt(order.purchaseDate)).toLocaleDateString()}
+                  {new Date(parseInt(orders.purchaseDate)).toLocaleDateString()}
                 </Typography>
                 <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
-                  {order.products.map(({ _id, image, name, price }, index) => (
+                  {console.log(orders.products)}
+                  {orders.products.map(({ _id, image, name, price }, index) => (
                     <Box
                       key={index}
                       sx={{
@@ -48,7 +48,7 @@ function OrderHistory() {
                           style={{ width: '100%', height: 'auto' }}
                         />
                         <Typography variant='h6'>{name}</Typography>
-                      </Link>
+                        </Link>
                       <Typography variant='subtitle1'>${price}</Typography>
                     </Box>
                   ))}
