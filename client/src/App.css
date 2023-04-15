@@ -18,16 +18,16 @@ body {
   height: 100%;
   width: 100%;
   background-color: var(--background);
-  background-size: cover;
+  /* background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center; */
   /* background-attachment: fixed; */
 }
 
-.app-content {
+/* .app-content {
   margin-top: 150px;
   margin-bottom: 150px;
-}
+} */
 
 /* Nav */
 .header {
@@ -38,8 +38,9 @@ body {
 }
 
 .logo {
-  max-width: 13%;
-  height: auto;
+  width: 80px;
+  height: 80px;
+  /* height: auto; */
   margin-top: -30px;
 }
 
