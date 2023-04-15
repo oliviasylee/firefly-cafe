@@ -73,7 +73,7 @@ const Cart = () => {
 
   if (!state.cartOpen) {
     return (
-      <Box className='cart-closed'>
+      <Box className='cart-closed hidden'>
         <IconButton onClick={toggleCart} aria-label='open cart'>
           <ShoppingCartIcon />
         </IconButton>
