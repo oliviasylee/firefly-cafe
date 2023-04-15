@@ -51,6 +51,8 @@ const styles = {
 
 function Signup(props) {
   const [formState, setFormState] = useState({ 
+    firstName: '',
+    lastName: '',
     username: '',
     email: '',
     password: '' });
