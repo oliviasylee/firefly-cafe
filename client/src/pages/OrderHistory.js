@@ -31,10 +31,10 @@ function OrderHistory() {
             <ArrowBackIcon />
             <h3 style={{ marginLeft: '5px' }}>Back to Products</h3>
             </Link>
-            <Divider sx={{ my: 2, mb: 5 }}/>
+            <Divider sx={{ my: 2 }} />
         {user ? (
           <>
-            <Typography variant='h4' sx={{ mt: 2 }}>
+            <Typography variant='h4' sx={{ mt: 3 }}>
               Order History for {user.firstName} {user.lastName}
             </Typography>
           {console.log(user.orders)}
