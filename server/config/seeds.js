@@ -21,7 +21,7 @@ db.once('open', async () => {
             image: 'https://res.cloudinary.com/hbhhv9rz9/image/upload/f_auto,c_limit,w_3840,q_auto/Merch%20PDPs/Hasami%20Natural%20Mug%20with%20Saucer/Hasami-Natural-Mug-with-Saucer-M1-Hero.png',
             description: '100$ Gift card',
             quantity: 30,
-            category: categories[1]._id
+            category: categories[2]._id
         },
         {
             name: 'Latte Cup and Saucer',
@@ -29,7 +29,7 @@ db.once('open', async () => {
             image: 'https://res.cloudinary.com/hbhhv9rz9/image/upload/f_auto,c_limit,w_3840,q_auto/Merch%20PDPs/Blue%20Bottle%20Latte%20Cup%20and%20Saucer/Blue-Bottle-Latte-Cup-and-Saucer-M1-Hero.png',
             description: '100$ Gift card',
             quantity: 30,
-            category: categories[1]._id
+            category: categories[2]._id
         },
         {
             name: 'Jaesik Ceramic Cup                   ',
@@ -37,7 +37,7 @@ db.once('open', async () => {
             image: 'https://res.cloudinary.com/hbhhv9rz9/image/upload/f_auto,c_limit,w_3840,q_auto/Holiday%202022%20Collection/Merch%20/Jaesik%20Mug/Jaesik-Ceramics-Mug-M1-Hero_2.png',
             description: '100$ Gift card',
             quantity: 30,
-            category: categories[1]._id
+            category: categories[2]._id
         },
         {
             name: 'Hasami Stackable Cups',
