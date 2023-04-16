@@ -70,4 +70,4 @@ MIT License
 - [Jairo Macassi](https://github.com/)
 
 ## Questions ❓
-For any additional questions, please reach out to: jaecho203@gmail.com, oliviasylee@gmail.com, Brandonorozco10@gmail.com or visit [slchld1](https://github.com/slchld1), [oliviasylee](https://github.com/oliviasylee) on GitHub! Thank you.
+For any additional questions, please reach out to: jaecho203@gmail.com, oliviasylee@gmail.com or visit [slchld1](https://github.com/slchld1), [oliviasylee](https://github.com/oliviasylee) on GitHub! Thank you.
