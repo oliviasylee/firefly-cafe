@@ -61,7 +61,7 @@ function ProductItem(item) {
                         component='img'
                         alt='penguin'
                         height='140'
-                        image={`/images/${image}`}
+                        image={`${image}`}
                     />
                     <CardContent>
                         <Link
