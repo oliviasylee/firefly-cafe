@@ -56,7 +56,7 @@ function OrderHistory() {
                       <Link to={`/products/${_id}`}>
                         <img
                           alt={name}
-                          src={`/images/${image}`}
+                          src={image}
                           style={{ width: '100%', height: 'auto' }}
                         />
                         <Typography variant='h6'>{name}</Typography>
