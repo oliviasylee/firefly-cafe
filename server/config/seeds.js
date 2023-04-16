@@ -21,7 +21,7 @@ db.once('open', async () => {
             image: 'https://res.cloudinary.com/hbhhv9rz9/image/upload/f_auto,c_limit,w_3840,q_auto/Merch%20PDPs/Hasami%20Natural%20Mug%20with%20Saucer/Hasami-Natural-Mug-with-Saucer-M1-Hero.png',
             description: '100$ Gift card',
             quantity: 30,
-            category: categories[0]._id
+            category: categories[1]._id
         },
         {
             name: 'Latte Cup and Saucer',
@@ -85,7 +85,7 @@ db.once('open', async () => {
             image: 'https://res.cloudinary.com/hbhhv9rz9/image/upload/f_auto,c_limit,w_3840,q_auto/Merch%20PDPs/Fellow%20Ode%20Grinder%20(Black)/Fellow-Ode-Grinder-Black-M1-Hero.png',
             description: 'The power and precision of a professional grinder wrapped in the elegance you want for your kitchen',
             quantity: 30,
-            category: categories[1]._id
+            category: categories[2]._id
         },
         {
             name: 'Ceramic Coffee Mill',
@@ -93,7 +93,7 @@ db.once('open', async () => {
             image: 'https://res.cloudinary.com/hbhhv9rz9/image/upload/f_auto,c_limit,w_3840,q_auto/Merch%20PDPs/Hario%20Skerton+%20Ceramic%20Coffee%20Mill/Hario-Skerton-Ceramic-Coffee-Mill-M1-Hero.png',
             description: 'You’ll love this manual grinder for its consistent grind size, portability, and ease of use.',
             quantity: 30,
-            category: categories[1]._id
+            category: categories[2]._id
         },
         {
             name: 'Baratza Encore Grinder',
@@ -101,7 +101,7 @@ db.once('open', async () => {
             image: 'https://res.cloudinary.com/hbhhv9rz9/image/upload/f_auto,c_limit,w_3840,q_auto/Merch%20PDPs/Baratza%20Encore%20Grinder%20(Black)/Baratza-Encore-Grinder-Black-M1-Hero.png',
             description: 'Accurate grind size is key to brewing cafe-quality coffee.',
             quantity: 30,
-            category: categories[1]._id
+            category: categories[2]._id
         },
         {
             name: 'Home Coffee Grinder',
@@ -109,7 +109,7 @@ db.once('open', async () => {
             image: 'https://res.cloudinary.com/hbhhv9rz9/image/upload/f_auto,c_limit,w_3840,q_auto/Merch%20PDPs/Baratza%20Vario%20+%20Grinder%20(READY)/Baratza-Vario-Plus-Grinder-M1-Hero.png',
             description: 'Grind like professionals, keep a sleek footprint. Over 220 settings give you control over grind size. A backlit LCD display makes coffee prep a breeze, even in low morning light.',
             quantity: 30,
-            category: categories[0]._id
+            category: categories[2]._id
         },
         {
             name: 'Wood Pouring Kettle',
@@ -149,7 +149,7 @@ db.once('open', async () => {
             image: 'https://cdn.shopify.com/s/files/1/0628/8772/3181/products/mockupbagsdecafblend.jpg?v=1665512523&width=800',
             description: 'coffee',
             quantity: 30,
-            category: categories[2]._id
+            category: categories[0]._id
         }, 
         { 
             name: 'The Vault Blend 80/20',
@@ -157,7 +157,7 @@ db.once('open', async () => {
             image: 'https://cdn.shopify.com/s/files/1/0628/8772/3181/products/mockupbagsthevault.jpg?v=1665512788&width=800',
             description: 'coffee',
             quantity: 30,
-            category: categories[2]._id
+            category: categories[0]._id
         },        
         {
             name: 'Coral Coast Blend',
@@ -165,7 +165,7 @@ db.once('open', async () => {
             image: 'https://cdn.shopify.com/s/files/1/0628/8772/3181/products/mockupbagscoralcoast.jpg?v=1665512520&width=800',
             description: 'coffee',
             quantity: 30,
-            category: categories[2]._id
+            category: categories[0]._id
         },        
         {
             name: 'Mesa Blend',
@@ -173,14 +173,14 @@ db.once('open', async () => {
             image: 'https://cdn.shopify.com/s/files/1/0628/8772/3181/products/mockupbagsmesa.jpg?v=1665418801&width=800',
             description: 'Coffee',
             quantity: 30,
-            category: categories[2]._id
+            category: categories[0]._id
         },{
             name: '10$ Gift Card',
             price: 10,
             image: 'https://www.zazzle.com/rlv/svc/view?realview=113466622742179623&design=9b618514-9b5c-47aa-a945-4cb630f02d7f&style=3.5x2&media=18ptsemi_gloss&cornerstyle=allrounded&envelopes=none&max_dim=1080&zattribution=none&cacheDefeat=1681431528947',
             description: 'Coffe Beans',
             quantity: 30,
-            category: categories[0]._id
+            category: categories[1]._id
         },
         {
             name: '25$ Gift Card',
@@ -188,7 +188,7 @@ db.once('open', async () => {
             image: 'https://www.zazzle.com/rlv/svc/view?realview=113466622742179623&design=9b618514-9b5c-47aa-a945-4cb630f02d7f&style=3.5x2&media=18ptsemi_gloss&cornerstyle=allrounded&envelopes=none&max_dim=1080&zattribution=none&cacheDefeat=1681431589864',
             description: 'Coffe Beans',
             quantity: 30,
-            category: categories[0]._id
+            category: categories[1]._id
         },
         {
             name: '50$ Gift Card',
@@ -196,7 +196,7 @@ db.once('open', async () => {
             image: 'https://www.zazzle.com/rlv/svc/view?realview=113466622742179623&design=9b618514-9b5c-47aa-a945-4cb630f02d7f&style=3.5x2&media=18ptsemi_gloss&cornerstyle=allrounded&envelopes=none&max_dim=1080&zattribution=none&cacheDefeat=1681431632211',
             description: 'Coffe Beans',
             quantity: 30,
-            category: categories[0]._id
+            category: categories[1]._id
         },
         {
             name: '100$ Gift Card',
@@ -204,7 +204,7 @@ db.once('open', async () => {
             image: 'https://www.zazzle.com/rlv/svc/view?realview=113466622742179623&design=cc6f0210-5e04-4980-b56c-b6f895f02fe8&style=3.5x2&media=18ptsemi_gloss&cornerstyle=allrounded&envelopes=none&max_dim=1080&zattribution=none&cacheDefeat=1681675868257',
             description: '100$ Gift card',
             quantity: 30,
-            category: categories[0]._id
+            category: categories[1]._id
         },        
                
     ])
