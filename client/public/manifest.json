@@ -1,6 +1,7 @@
 {
   "short_name": "Firefly Cafe",
   "name": "Firefly Cafe",
+  "description": "A cozy coffee shop serving delicious coffee and snacks.",
   "icons": [
     {
       "src": "favicon.ico",
