@@ -26,12 +26,12 @@ function OrderHistory() {
     <Container maxWidth='lg'>
       <Grid container>
         <Grid item xs={12}>
-          <Box sx={{ my: 1 }}>
+          <Box>
             <Link to='/shop' style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
             <ArrowBackIcon />
             <h3 style={{ marginLeft: '5px' }}>Back to Products</h3>
             </Link>
-            <Divider sx={{ my: 1 }} />
+            <Divider sx={{ my: 2, mb: 5 }}/>
         {user ? (
           <>
             <Typography variant='h4' sx={{ mt: 2 }}>
