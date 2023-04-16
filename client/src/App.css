@@ -1,5 +1,6 @@
 :root {
-  --background: #f9f6efff;
+  --theme: #f9f6efff;
+  --background: #1d0f8f;
 }
 
 * {
@@ -17,7 +18,7 @@ body {
   margin-top: 45px;
   height: 100%;
   width: 100%;
-  background-color: var(--background);
+  background-color: var(--theme);
   /* background-size: cover;
   background-repeat: no-repeat;
   background-position: center; */
@@ -32,7 +33,7 @@ body {
 /* Nav */
 .header {
   margin-bottom: 50px;
-  background-color: var(--background);
+  background-color: var(--theme);
   position: sticky;
   top: 0;
 }
@@ -43,19 +44,6 @@ body {
   /* height: auto; */
   margin-top: -30px;
 }
-
-/* 
-.scroll-logo {
-  max-width: 20%;
-  height: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hidden {
-  visibility: hidden;
-} */
 
 ul.nav {
   display: flex;
@@ -76,24 +64,9 @@ ul.nav li {
   align-items: center;
   position: sticky;
   top: 50px;
-  background-color: var(--background);
+  background-color: var(--theme);
   z-index: 99;
 }
-
-/* .bubble {
-  box-shadow: 0 5px 10px 0 rgba(138, 155, 165, 0.15);
-  padding: 10px 0;
-  border-radius: 8px;
-  -webkit-transition : all 0.3s ease-out;
-  transition : all 0.3s ease-out;
-}
-
-.bub {
-  height: 12%;
-  width: 35% fit-content;
-	-webkit-transition : all 0.3s ease-out;
-	transition : all 0.3s ease-out;
-} */
 
 .nav li {
   margin-right: 15px;
@@ -134,7 +107,7 @@ ul.nav li {
 /* Footer */
 .footer {
   text-align: center;
-  color: var(--background);
+  color: var(--theme);
   font-size: 17px;
   padding: 26px 34px;
   bottom: 0;
@@ -142,7 +115,7 @@ ul.nav li {
 }
 
 .footer-container {
-  background-color: #1d0f8f;
+  background-color: var(--background);
   width: 100%;
   height: 100%;
   margin-top: 70px;
@@ -151,7 +124,7 @@ ul.nav li {
 .socialIcons {
   list-style-type: none;
   display: inline-flex;
-  justify-content: center;
+  /* justify-content: center; */
   padding: 0;
   margin-bottom: 1rem;
 }

@@ -3,13 +3,20 @@ import { loadStripe } from '@stripe/stripe-js';
 import { useLazyQuery } from '@apollo/client';
 import { QUERY_CHECKOUT } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
-import CartItem from '../CartItem';
 import Auth from '../../utils/auth';
 import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_CART, UPDATE_CART } from '../../utils/actions';
 
-import './style.css';
-import { IconButton, Box, Button, Typography, List, ListItem, Divider } from '@mui/material';
+import CartItem from '../CartItem';
+
+import { 
+  IconButton, 
+  Box, 
+  Button, 
+  Typography, 
+  List, 
+  ListItem, 
+  Divider } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import CloseIcon from '@mui/icons-material/Close';
 import './style.css';

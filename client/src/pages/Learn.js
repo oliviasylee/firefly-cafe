@@ -17,10 +17,10 @@ function Learn() {
           <br />
           <Divider sx={{ my: 1 }} />
           <Grid container>
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={12} md={4}>
             <img alt='learn' className='learnImg' src={image}></img>
             </Grid>
-            <Grid item xs={12} sm={8}>
+            <Grid item xs={12} md={8}>
             <p className='learnText'>
             At Firefly Cafe, we believe in the power of coffee to bring people together and foster connections. Our passion for coffee extends beyond its ability to stimulate the senses. <br /><br />It's a tool for creativity, thoughtful conversations, and community building. Join us at Firefly Cafe and experience the magic of coffee in a space that celebrates connection and creativity.<br /><br />
             From classic blends to specialty roasts, we offer a variety of handcrafted coffees to satisfy every taste.</p>
