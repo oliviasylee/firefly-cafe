@@ -14,14 +14,15 @@ import Nav from './components/Nav/index';
 import Footer from './components/Footer/index';
 import Cart from './components/Cart/index';
 
-import Signup from './pages/Signup';
-import Login from './pages/Login';
-import Detail from './pages/Detail';
-import Shop from './pages/Shop';
-import Success from './pages/Success';
-import OrderHistory from './pages/OrderHistory';
 import Learn from './pages/Learn';
 import Menu from './pages/Menu';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Shop from './pages/Shop';
+import Detail from './pages/Detail';
+import Success from './pages/Success';
+import OrderHistory from './pages/OrderHistory';
+import NoMatch from './pages/NoMatch';
 
 import Container from '@mui/material/Container';
 import './App.css';
@@ -49,7 +50,6 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        {/* <div className='app-wrapper' style={{ position: 'relative' }}> */}
           <StoreProvider>
             <Container maxWidth='xl'>
               <Nav />
@@ -64,10 +64,10 @@ function App() {
                   <Route exact path='/signup' element={<Signup />} />
                   <Route exact path='/success' element={<Success />} />
                   <Route exact path='/order' element={<OrderHistory />} />
+                  <Route exact path='*' element={<NoMatch />} />
                 </Routes>
             </Container>
           </StoreProvider>
-        {/* </div> */}
         <Footer />
       </Router>
     </ApolloProvider>
