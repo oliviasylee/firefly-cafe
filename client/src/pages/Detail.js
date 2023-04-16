@@ -100,6 +100,7 @@ function Detail() {
                 <img
                   src={currentProduct.image}
                   alt={currentProduct.name}
+                  width='300'
                 />
                 <h2>{currentProduct.name}</h2>
                 <p>{currentProduct.description}</p>
