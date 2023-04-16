@@ -27,7 +27,7 @@ The Application was built using the following tools:
 
 ## User Story ✉️
 ~~~
-AS a coffee lover for a sepecific brand
+AS a coffee lover for a specific brand
 I WANT to order coffee from the comfort of my home, office, etc.
 SO THAT I can enjoy my coffee whenever and wherever
 AS a cafe owner
@@ -38,7 +38,7 @@ SO THAT I can broaden my range of customers offline and online
 ~~~
 GIVEN a website of the cafe
 WHEN I visit the site
-THEN I am presented with the homepage where I can shop for coffe, beans, food, and dessert
+THEN I am presented with the homepage where I can shop for coffee, beans, food, and dessert
 WHEN I click join
 THEN I am taken to the register page
 WHEN I click login
