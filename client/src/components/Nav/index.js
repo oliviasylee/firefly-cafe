@@ -43,7 +43,7 @@ function Nav() {
             <img src={logo} className='logo' alt='logo' />
           </NavLink>
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={6}>
           {isMobile ? (
             <IconButton onClick={toggleDrawer} color='inherit' aria-label='menu' sx={{ml: 'auto', justifyContent: 'flex-end', display:'flex'}}>
             <MenuIcon />
