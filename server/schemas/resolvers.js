@@ -62,7 +62,6 @@ const resolvers = {
     },
 
     checkout: async (parent, args, context) => {
-      try {
       const url = new URL(context.headers.referer).origin;
       const order = new Order({ products: args.products });
       const line_items = [];
@@ -96,10 +95,6 @@ const resolvers = {
       });
 
       return { session: session.id };
-    }catch(e){
-      console.log(e)
-      
-    }
   },
 
   },
