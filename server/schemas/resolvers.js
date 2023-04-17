@@ -1,6 +1,7 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User, Product, Category, Order, Newsletter } = require('../models');
 const { signToken } = require('../utils/auth');
+const { collection } = require('../models/Order');
 const stripe = require('stripe')("sk_test_51MvrAFJmPjVKp8qTid2sZ4Bz9Wlx1mZZWVEnqqwX0ysS4K0qKiQBskUQUtHqCTL29fVsuC6oMHVisebHquI73IRO00V64xgHk3");
 
 const resolvers = {
@@ -61,13 +62,14 @@ const resolvers = {
     },
 
     checkout: async (parent, args, context) => {
+      try {
       const url = new URL(context.headers.referer).origin;
       const order = new Order({ products: args.products });
       const line_items = [];
 
       const { products } = await order.populate('products');
 
-      for (let i = 0; i < products.length; i++) {
+        for (let i = 0; i < products.length; i++) {
         const product = await stripe.products.create({
           name: products[i].name,
           description: products[i].description,
@@ -84,17 +86,21 @@ const resolvers = {
           quantity: 1
         });
       }
-
+      
       const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
-        line_items,
+        line_items: line_items,
         mode: 'payment',
         success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${url}/`
       });
 
       return { session: session.id };
-    },
+    }catch(e){
+      console.log(e)
+      
+    }
+  },
 
   },
   Mutation: {
