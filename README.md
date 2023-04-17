@@ -58,8 +58,24 @@ THEN I am able to come back later to checkout whenever I want
 ~~~
 
 ## Installation
+To run a local development copy, you must have installed Node.js, and Mongo DB.
+
+Clone the repository, then run npm run install in the root directory of the repository. It is also recommended for you to run npm run seed in order to seed your mongo database with some example data.
+
+Once those are done, you can see the development environemnt by running npm run develop in the root directory. This will start two Node.js servers, one running react, the other running an express server that uses Apollo Graphql to serve as the back end. They are on `localhost:3000/graphql` and `localhost:3001` respectively.
 
 ## Usage
+Our application is deployed live using heroku!
+Live Deploy: <a href=https://firefly-cafe.herokuapp.com>https://firefly-cafe.herokuapp.com/</a>
+
+![homepage](./assets/homepage.jpg)
+
+![shop](./assets/shop.jpg)
+
+![menu](./assets/menu.jpg)
+
+![orderhistory](./assets/orderhis.jpg)
+
 
 ## License
 MIT License
