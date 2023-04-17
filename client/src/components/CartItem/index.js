@@ -38,7 +38,7 @@ const CartItem = ({ item }) => {
     <Grid container spacing={1} alignItems='center'>
       <Grid item xs={12} sm={4}>
         <Box display='flex' alignItems='center'>
-          <img src={`/images/${item.image}`} alt='' height='70' />
+          <img src={item.image} alt='' height='70' />
           <Box mr={2} ml={2}>
             <Typography variant='subtitle1' style={{ marginBottom: '0.3rem' }}>{item.name}</Typography>
             <Typography variant='body2' color='textSecondary' style={{ marginBottom: '0.3rem' }}>${item.price}</Typography>
