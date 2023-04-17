@@ -28,7 +28,7 @@ import Container from '@mui/material/Container';
 import './App.css';
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:3001/graphql',
+  uri: 'https://firefly-cafe.herokuapp.com/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
