@@ -98,9 +98,9 @@ function Detail() {
               </Link>
               <Divider sx={{ my: 2, mb: 5 }} />
                 <img
-                  src={currentProduct.image}
+                height='300'
+                  src={`${currentProduct.image}`}
                   alt={currentProduct.name}
-                  width='300'
                 />
                 <h2>{currentProduct.name}</h2>
                 <p>{currentProduct.description}</p>
