@@ -60,7 +60,7 @@ function ProductItem(item) {
                     <CardMedia
                         component='img'
                         alt='penguin'
-                        height='140'
+                        height='180'
                         image={`${image}`}
                     />
                     <CardContent>
