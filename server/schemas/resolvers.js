@@ -67,7 +67,7 @@ const resolvers = {
 
       const { products } = await order.populate('products');
 
-      for (let i = 0; i < products.length; i++) {
+        for (let i = 0; i < products.length; i++) {
         const product = await stripe.products.create({
           name: products[i].name,
           description: products[i].description,
@@ -84,7 +84,7 @@ const resolvers = {
           quantity: 1
         });
       }
-
+      
       const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
         line_items,
@@ -94,7 +94,7 @@ const resolvers = {
       });
 
       return { session: session.id };
-    },
+  },
 
   },
   Mutation: {
